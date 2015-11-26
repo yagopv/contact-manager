@@ -1,20 +1,20 @@
 ## Build Contact Manager
 
-**Install npm dependencies**
-npm install
+###Install npm dependencies
 
-**Install bower dependencies**
+npm install
+###Install bower dependencies
 bower install
 
-**Install gulp if not avaailable**
+###Install gulp if not available
 npm install -g gulp
 
-**Start MongoDB server**
+###Start MongoDB server
 mongod
 
-**Build app**
+###Build app
 gulp concat (for debug)
 gulp min (for production)
 
-**Start app**
+###Start app
 npm start
