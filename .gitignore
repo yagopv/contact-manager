@@ -1,7 +1,5 @@
 node_modules
 bower_components
 .idea
-home
-.c9
 web.config
 client/lib
