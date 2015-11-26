@@ -1,0 +1,7 @@
+<div class="validationSummary">
+    <div ng-show="ctrl.errorCount > 0" class="alert alert-danger" role="alert">
+        <p ng-repeat="error in ctrl.summary.errors">
+            <span>{{ error.path.indexOf(0).toUpperCase() }}</span> {{ error.message.replace("path","") }}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div>
+
+    <div class="page-header">
+        <h3>Phones</h3>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kind</th>
+                    <th>Number</th>
+                    <th class="text-right" ng-show="!ctrl.phoneFormVisibility">
+                        <button class="btn btn-primary btn-sm" ng-click="ctrl.changePhonesFormVisibility(true)">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="phone in ctrl.phones track by $index | orderBy:'created':true">
+                    <td>{{ phone.kind.substr(0,1).toUpperCase() + phone.kind.substr(1) }}</td>
+                    <td>{{ phone.number }}</td>
+                    <td class="text-right" ng-style="{'visibility': ctrl.phoneFormVisibility ? 'hidden' : 'visible'}">
+                        <button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.removePhone($index)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="opacity50" ng-if="ctrl.phones.length == 0 && !ctrl.phoneFormVisibility">
+        <em>Press + to add a new phone</em>
+    </p>
+
+    <div class="row" ng-if="ctrl.phoneFormVisibility">
+        <ng-form name="ctrl.phoneForm">
+            <div class="form-group col-md-4" ng-class="{ 'has-error' : ctrl.phoneForm.kind.$invalid && (ctrl.phoneForm.kind.$dirty || ctrl.phoneForm.submitted) }">
+                <select name="kind" class="form-control input-sm" ng-model="ctrl.editPhone.kind" required>
+                    <option value="work">Work</option>
+                    <option value="home">Home</option>
+                    <option value="mobile">Mobile</option>
+                    <option value="fax">Fax</option>
+                </select>
+            </div>
+            <div class="form-group col-md-5" ng-class="{ 'has-error' : ctrl.phoneForm.number.$invalid && (ctrl.phoneForm.number.$dirty || ctrl.phoneForm.submitted) }">
+                <input name="number" type="number" class="form-control input-sm" ng-model="ctrl.editPhone.number" placeholder="Phone number *" required>
+            </div>
+            <div class="btn-group btn-group-sm col-md-3" role="group">
+                <button type="submit" class="btn btn-primary" ng-click="ctrl.addPhone(ctrl.editPhone)">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button type="button" class="btn btn-danger" ng-click="ctrl.changePhonesFormVisibility(false)">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+        </ng-form>
+    </div>
+</div>

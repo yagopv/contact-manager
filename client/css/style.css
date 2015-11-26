@@ -1,0 +1,149 @@
+/* Sticky footer */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 75px;
+    padding-top: 50px;
+}
+
+footer {
+    position: absolute;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #2780e3;
+    color: #FFF;
+}
+
+.row {
+    margin-top: 5px;
+}
+
+.validationSummary {
+    margin-top: 10px;
+}
+
+/* Nav bar */
+.navbar-inverse {
+    border: none;
+}
+
+/* Home & 404 */
+#home .jumbotron,#notFound .jumbotron {
+    background-color: #2780e3;
+    color: #FFF;
+}
+
+#home .jumbotron i {
+    display: block;
+    font-size: 13em;
+}
+
+#notFound .jumbotron i {
+    display: block;
+    font-size: 20em;
+}
+
+@media (min-width: 992px) {
+    #home .heading p:first-of-type,#notFound .heading p:first-of-type {
+        height: 100px;
+    }
+}
+
+#notFound h1 {
+    font-size: 10em;
+}
+
+/* Dashboard */
+
+.contact .contact-row em {
+    opacity: .35;
+}
+
+/* Edit */
+
+@media (max-width: 767px) {
+    #edit-contact .toolbar button {
+        width: 100%;
+    }
+
+}
+
+/* Bootstrap overrides */
+.input-group-addon {
+    background-color: #2780e3;
+    border-color: #2780e3;
+    color: #FFF;
+}
+
+.panel {
+    cursor: pointer;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -ms-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    transition: all .1s linear;
+}
+
+.panel.scale {
+    -webkit-transform: scale(1.02, 1.02);
+    -moz-transform: scale(1.02, 1.02);
+    -ms-transform: scale(1.02, 1.02);
+    -o-transform: scale(1.02, 1.02);
+    transform: scale(1.02, 1.02);
+}
+
+/* ngDialog */
+.ngdialog.ngdialog-theme-plain .ngdialog-content {
+    padding: 2em;
+    width: 600px;
+}
+
+/* Helpers */
+.opacity50 {
+    opacity: .5;
+}
+
+.loader-wrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    width: 100%;
+    height: 100%;
+    z-index: 400;
+    opacity: .5;
+}
+
+.loader {
+    display: table;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.loader i {
+    position: absolute;
+    left: 50%;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.float-right {
+    float: right;
+}

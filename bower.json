@@ -1,0 +1,24 @@
+{
+  "name": "contact-manager",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.5",
+    "angular-ui-router": "~0.2.15",
+    "bootswatch-dist": "cosmo",
+    "font-awesome": "~4.4.0",
+    "angular-bootstrap-datetimepicker": "~0.4.0",
+    "moment": "~2.10.6",
+    "ng-dialog": "~0.5.6"
+  }
+}
