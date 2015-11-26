@@ -4,32 +4,32 @@
  */
 (function() {
 
-	"use strict";
+    "use strict";
 
     angular.module("contactManager", [
-		"contactManager.dashboard",
-		"contactManager.common"])
+            "contactManager.dashboard",
+            "contactManager.common"])
 
-		.config(["$uiViewScrollProvider", Config ])
-		.controller("AppController", [ "LoadingFactory", AppController ]);
+        .config(["$uiViewScrollProvider", Config ])
+        .controller("AppController", [ "LoadingFactory", AppController ]);
 
-	/**
-	 * Config app
-	 * @param $uiViewScrollProvider
-	 * @constructor
+    /**
+     * Config app
+     * @param $uiViewScrollProvider
+     * @constructor
      */
-	function Config($uiViewScrollProvider) {
-		$uiViewScrollProvider.useAnchorScroll();
-	}
+    function Config($uiViewScrollProvider) {
+        $uiViewScrollProvider.useAnchorScroll();
+    }
 
-	/**
-	 * Main base controller
-	 * @param LoadingFactory
-	 * @param $scope
-	 * @constructor
+    /**
+     * Main base controller
+     * @param LoadingFactory
+     * @param $scope
+     * @constructor
      */
-	function AppController(LoadingFactory) {
-		this.loading = LoadingFactory;
-	}
+    function AppController(LoadingFactory) {
+        this.loading = LoadingFactory;
+    }
 
 })();
