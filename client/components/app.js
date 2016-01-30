@@ -8,10 +8,11 @@
 
     angular.module("contactManager", [
             "contactManager.dashboard",
+            "contactManager.account",
             "contactManager.common"])
 
         .config(["$uiViewScrollProvider", Config ])
-        .controller("AppController", [ "LoadingFactory", AppController ]);
+        .controller("AppController", [ "LoadingFactory", "$auth", AppController ]);
 
     /**
      * Config app
@@ -28,8 +29,9 @@
      * @param $scope
      * @constructor
      */
-    function AppController(LoadingFactory) {
+    function AppController(LoadingFactory, $auth) {
         this.loading = LoadingFactory;
+        this.isAuthenticated = $auth.isAuthenticated;
     }
 
 })();

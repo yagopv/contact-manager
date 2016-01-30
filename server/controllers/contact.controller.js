@@ -1,5 +1,3 @@
-var assign = require("object-assign");
-
 var Contact = require("../models/contact.model");
 
 /**

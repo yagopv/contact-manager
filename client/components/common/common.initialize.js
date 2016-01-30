@@ -2,7 +2,7 @@
  * Define module contactManager.common
  */
 (function() {
-    angular.module("contactManager.common", ["ui.router"])
+    angular.module("contactManager.common", ["ui.router", "satellizer"])
         .config([
             "$stateProvider",
             "$urlRouterProvider",
@@ -63,6 +63,54 @@
         });
 
         /**
+         * Login
+         */
+        $stateProvider.state('login', {
+            url: '/login',
+            controller: 'LoginController',
+            controllerAs: 'login',
+            resolve: {
+                skipIfLoggedIn: skipIfLoggedIn
+            },
+            templateUrl: '/components/account/login/login.html'
+        });
+
+        /**
+         * Signup
+         */
+        $stateProvider.state('signup', {
+            url: '/signup',
+            controller: 'SignupController',
+            controllerAs: 'signup',
+            resolve: {
+                skipIfLoggedIn: skipIfLoggedIn
+            },
+            templateUrl: '/components/account/signup/signup.html'
+        });
+
+        /**
+         * Logout
+         */
+        $stateProvider.state('logout', {
+            url: '/logout',
+            template: null,
+            controller: 'LogoutController'
+        });
+
+        /**
+         * Profile
+         */
+        $stateProvider.state('profile', {
+            url: '/profile',
+            controller: 'ProfileController',
+            controllerAs: 'profile',
+            resolve: {
+                loginRequired: loginRequired
+            },
+            templateUrl: '/components/account/profile/profile.html'
+        });
+
+        /**
          * When not route found go to 404 route
          */
         $stateProvider.state('404', {
@@ -72,6 +120,26 @@
 
         $urlRouterProvider.when("", "/");
         $urlRouterProvider.otherwise('/404');
+
+        function skipIfLoggedIn($q, $auth) {
+            var deferred = $q.defer();
+            if ($auth.isAuthenticated()) {
+                deferred.reject();
+            } else {
+                deferred.resolve();
+            }
+            return deferred.promise;
+        }
+
+        function loginRequired($q, $location, $auth) {
+            var deferred = $q.defer();
+            if ($auth.isAuthenticated()) {
+                deferred.resolve();
+            } else {
+                $location.path('/login');
+            }
+            return deferred.promise;
+        }
     }
 })();
 

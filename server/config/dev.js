@@ -4,6 +4,7 @@
  */
 var config = {
     connection : "mongodb://localhost/contact-manager",
+    token_secret : 'YOUR_UNIQUE_JWT_TOKEN_SECRET'
 };
 
 module.exports = config;

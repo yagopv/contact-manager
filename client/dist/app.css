@@ -1,1 +1,323 @@
-#home .jumbotron,#notFound .jumbotron,.input-group-addon,footer{background-color:#2780e3;color:#FFF}html{position:relative;min-height:100%}body{margin-bottom:75px;padding-top:50px}footer{position:absolute;padding:20px;bottom:0;width:100%;height:60px}.row{margin-top:5px}.validationSummary{margin-top:10px}.navbar-inverse{border:none}#home .jumbotron i{display:block;font-size:13em}#notFound .jumbotron i{display:block;font-size:20em}@media (min-width:992px){#home .heading p:first-of-type,#notFound .heading p:first-of-type{height:100px}}#notFound h1{font-size:10em}.contact .contact-row em{opacity:.35}@media (max-width:767px){#edit-contact .toolbar button{width:100%}}.input-group-addon{border-color:#2780e3}.panel{cursor:pointer;-webkit-transition:all .1s linear;-moz-transition:all .1s linear;-ms-transition:all .1s linear;-o-transition:all .1s linear;transition:all .1s linear}.panel.scale{-webkit-transform:scale(1.02,1.02);-moz-transform:scale(1.02,1.02);-ms-transform:scale(1.02,1.02);-o-transform:scale(1.02,1.02);transform:scale(1.02,1.02)}.ngdialog.ngdialog-theme-plain .ngdialog-content{padding:2em;width:600px}.loader,.loader-wrapper{height:100%;top:0;left:0;width:100%;position:absolute}.opacity50{opacity:.5}.loader-wrapper{display:block;background-color:#FFF;z-index:400;opacity:.5}.loader{display:table}.loader i{position:absolute;left:50%}.mt20{margin-top:20px}.mt5{margin-top:5px}.float-right{float:right}
+/* Sticky footer */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 75px;
+    padding-top: 50px;
+}
+
+footer {
+    position: absolute;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #2780e3;
+    color: #FFF;
+}
+
+.row {
+    margin-top: 5px;
+}
+
+.validationSummary {
+    margin-top: 10px;
+}
+
+/* Nav bar */
+.navbar-inverse {
+    border: none;
+}
+
+/* Home & 404 */
+#home .jumbotron,#notFound .jumbotron {
+    background-color: #2780e3;
+    color: #FFF;
+}
+
+#home .jumbotron i {
+    display: block;
+    font-size: 13em;
+}
+
+#notFound .jumbotron i {
+    display: block;
+    font-size: 20em;
+}
+
+@media (min-width: 992px) {
+    #home .heading p:first-of-type,#notFound .heading p:first-of-type {
+        height: 100px;
+    }
+}
+
+#notFound h1 {
+    font-size: 10em;
+}
+
+/* Dashboard */
+
+.contact .contact-row em {
+    opacity: .35;
+}
+
+/* Edit */
+
+@media (max-width: 767px) {
+    #edit-contact .toolbar button {
+        width: 100%;
+    }
+
+}
+
+/* Bootstrap overrides */
+.input-group-addon {
+    background-color: #2780e3;
+    border-color: #2780e3;
+    color: #FFF;
+}
+
+.panel {
+    cursor: pointer;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -ms-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    transition: all .1s linear;
+}
+
+.panel.scale {
+    -webkit-transform: scale(1.02, 1.02);
+    -moz-transform: scale(1.02, 1.02);
+    -ms-transform: scale(1.02, 1.02);
+    -o-transform: scale(1.02, 1.02);
+    transform: scale(1.02, 1.02);
+}
+
+/* ngDialog */
+.ngdialog.ngdialog-theme-plain .ngdialog-content {
+    padding: 2em;
+    width: 600px;
+}
+
+/* Helpers */
+.opacity50 {
+    opacity: .5;
+}
+
+.loader-wrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    width: 100%;
+    height: 100%;
+    z-index: 400;
+    opacity: .5;
+}
+
+.loader {
+    display: table;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.loader i {
+    position: absolute;
+    left: 50%;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.float-right {
+    float: right;
+}
+
+/* Login */
+
+.center-form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.signup-or-separator {
+    position: relative;
+    height: 34px;
+    text-align: center;
+    background: none;
+}
+
+.signup-or-separator hr {
+    width: 90%;
+    margin: -16px auto 10px auto;
+    border-top: 1px solid #dce0e0;
+}
+
+.signup-or-separator .text {
+    display: inline-block;
+    padding: 8px;
+    margin: 0;
+    background-color: #fff;
+}
+
+/* Password Strength Directive */
+.password-strength-indicator {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 5px;
+    padding: 0 15px;
+}
+
+.password-strength-indicator span {
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin-bottom: 2px;
+    background: #ebeef1;
+    border-radius: 5px;
+}
+
+/* Social Buttons */
+
+.btn-google-plus {
+    color: #fff;
+    background-color: #dd4b39;
+    border: 1px solid #d54331;
+}
+
+.btn-google-plus:hover,
+.btn-google-plus:focus {
+    color: #fff;
+    background-color: #cb3927;
+}
+
+.btn-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    border: 1px solid #335190;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus {
+    color: #fff;
+    background-color: #294786;
+}
+
+.btn-linkedin {
+    color: #fff;
+    background-color: #007bb6;
+    border: 1px solid #0073ae;
+}
+
+.btn-linkedin:hover,
+.btn-linkedin:focus {
+    color: #fff;
+    background-color: #0069a4;
+}
+
+.btn-twitter {
+    color: #fff;
+    background-color: #00aced;
+    border: 1px solid #009fdb;
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus {
+    color: #fff;
+    background-color: #0090c7;
+}
+
+.btn-foursquare {
+    color: #fff;
+    background-color: #f94877;
+    border: 1px solid #f8215a;
+}
+
+.btn-foursquare:hover,
+.btn-foursquare:focus {
+    color: #fff;
+    background-color: #f71752;
+}
+
+.btn-github {
+    color: #fff;
+    background-color: #444;
+    border: 1px solid #3b3b3b;
+}
+
+.btn-github:hover,
+.btn-github:focus {
+    color: #fff;
+    background-color: #303030;
+}
+
+.btn-instagram {
+    color: #fff;
+    background-color: #3f729b;
+}
+
+.btn-instagram:hover,
+.btn-instagram:focus {
+    color: #fff;
+    background-color: #305777;
+}
+
+.btn-yahoo {
+    color: #fff;
+    background-color: #720e9e;
+}
+
+.btn-yahoo:hover,
+.btn-yahoo:focus {
+    color: #fff;
+    background-color: #600e85;
+}
+
+.btn-live {
+    color: #fff;
+    background-color: #2672ec;
+}
+
+.btn-live:hover,
+.btn-live:focus {
+    color: #fff;
+    background-color: #125acd;
+}
+
+.btn-twitch {
+    color: #fff;
+    background-color: #6441a5;
+}
+
+.btn-twitch:hover,
+.btn-twitch:focus {
+    color: #fff;
+    background-color: #7550ba;
+}
+
+.btn-bitbucket {
+    color: #fff;
+    background-color: #10375e;
+}
+
+.btn-bitbucket:hover,
+.btn-bitbucket:focus {
+    color: #fff;
+    background-color: #0d2c4a;
+}

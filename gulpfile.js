@@ -9,6 +9,7 @@ var paths = {
     webroot: path.join(process.cwd(), "client")
 };
 
+
 paths.appJs = [
     path.join(paths.webroot, "components/**/*.initialize.js"),
     path.join(paths.webroot, "components/**/*.directive.js"),
@@ -25,9 +26,12 @@ paths.vendorJs = [
     path.join(paths.webroot, "lib/bootswatch-dist/js/bootstrap.js"),
     path.join(paths.webroot, "lib/moment/moment.js"),
     path.join(paths.webroot, "lib/angular/angular.js"),
+    path.join(paths.webroot, "lib/angular-messages/angular-messages.js"),
     path.join(paths.webroot, "lib/angular-ui-router/release/angular-ui-router.js"),
     path.join(paths.webroot, "lib/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"),
-    path.join(paths.webroot, "lib/ng-dialog/js/ngDialog.js")
+    path.join(paths.webroot, "lib/ng-dialog/js/ngDialog.js"),
+    path.join(paths.webroot, "lib/satellizer/satellizer.js"),
+    path.join(paths.webroot, "lib/angular-toastr/dist/angular-toastr.tpls.js")
 ];
 
 paths.vendorCss = [
@@ -36,7 +40,8 @@ paths.vendorCss = [
     path.join(paths.webroot, "lib/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"),
     path.join(paths.webroot, "lib/ng-dialog/css/ngDialog.css"),
     path.join(paths.webroot, "lib/ng-dialog/css/ngDialog-theme-default.css"),
-    path.join(paths.webroot, "lib/ng-dialog/css/ngDialog-theme-plain.css")
+    path.join(paths.webroot, "lib/ng-dialog/css/ngDialog-theme-plain.css"),
+    path.join(paths.webroot, "lib/angular-toastr/dist/angular-toastr.css")
 ];
 
 paths.dist = path.join(paths.webroot, "dist/*");
