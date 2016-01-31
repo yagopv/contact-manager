@@ -35,6 +35,7 @@ exports.findById = function(req, res) {
  */
 exports.create = function(req, res) {
     var contact = new Contact(req.body.contact);
+    contact.user = req.user;
 
     contact.save(function(err, contact) {
         if (err) {
@@ -50,16 +51,14 @@ exports.create = function(req, res) {
  * @param res
  */
 exports.update = function(req, res) {
-    Contact.findByIdAndUpdate(req.params.id, req.body.contact, { new: true}, function(err, contact) {
+    var contact = new Contact(req.body.contact);
+    contact.user = req.user;
+
+    Contact.findByIdAndUpdate(req.params.id, contact, { new: true }, function(err, contact) {
         if (err) {
             res.status(400).send(err.message);
         } else {
-            contact.save(function(err, contact) {
-                if (err) {
-                    res.status(400).send(err);
-                }
-                res.status(200).json(contact);
-            });
+            res.status(200).json(contact);
         }
     });
 };

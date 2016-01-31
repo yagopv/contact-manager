@@ -18,13 +18,13 @@ module.exports = function(app) {
     router.route("/").get(indexController.index);
 
     router.route("/api/contact")
-        .get(contactController.index)
-        .post(contactController.create)
+        .get(ensureAuthenticated, contactController.index)
+        .post(ensureAuthenticated, contactController.create);
 
     router.route("/api/contact/:id")
-        .get(contactController.findById)
-        .put(contactController.update)
-        .delete(contactController.remove);
+        .get(ensureAuthenticated,contactController.findById)
+        .put(ensureAuthenticated, contactController.update)
+        .delete(ensureAuthenticated, contactController.remove);
 
     router.route("/api/me")
         .get(ensureAuthenticated, userController.findById)

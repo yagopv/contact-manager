@@ -178,7 +178,7 @@ footer {
 /* Password Strength Directive */
 .password-strength-indicator {
     position: absolute;
-    top: 10px;
+    top: 18px;
     right: 0;
     width: 5px;
     padding: 0 15px;

@@ -45,6 +45,7 @@ var ContactSchema = new Schema({
     emails: [ EmailSchema ],
     addresses: [ AddressSchema ],
     notes: [ String ],
+    user: [ String ],
     created: { type: "Date", default: Date.now() }
 });
 

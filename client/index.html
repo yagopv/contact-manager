@@ -48,13 +48,13 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li ui-sref-active="active"><a href="" ui-sref="home" cm-close-navbar><i class="fa fa-home fa-fw"></i>&nbsp; Home</a></li>
-                <li ui-sref-active="active"><a href="" ui-sref="dashboard" cm-close-navbar><i class="fa fa-dashboard fa-fw"></i>&nbsp; Dashboard</a></li>
-                <li ui-sref-active="active"><a href="" ui-sref="newContact" cm-close-navbar><i class="fa fa-user-plus fa-fw"></i>&nbsp; New</a></li>
+                <li ui-sref-active="active" ng-if="appController.isAuthenticated()"><a href="" ui-sref="dashboard" cm-close-navbar><i class="fa fa-dashboard fa-fw"></i>&nbsp; Dashboard</a></li>
+                <li ui-sref-active="active" ng-if="appController.isAuthenticated()"><a href="" ui-sref="newContact" cm-close-navbar><i class="fa fa-user-plus fa-fw"></i>&nbsp; New</a></li>
                 <li ui-sref-active="active"><a href="" ui-sref="about" cm-close-navbar><i class="fa fa-eye fa-fw"></i>&nbsp; About</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li ui-sref-active="active" ng-if="!appController.isAuthenticated()"><a href="" ui-sref="login" cm-close-navbar><i class="fa fa-unlock fa-fw"></i>&nbsp; Login</a></li>
+                <li ui-sref-active="active" ng-if="!appController.isAuthenticated()"><a href="" ui-sref="login" cm-close-navbar><i class="fa fa-lock fa-fw"></i>&nbsp; Login</a></li>
                 <li ui-sref-active="active" ng-if="!appController.isAuthenticated()"><a href="" ui-sref="signup" cm-close-navbar><i class="fa fa-sign-in fa-fw"></i>&nbsp; Sign Up</a></li>
                 <li ui-sref-active="active" ng-if="appController.isAuthenticated()"><a href="" ui-sref="profile" cm-close-navbar><i class="fa fa-user fa-fw"></i>&nbsp; Profile</a></li>
                 <li ui-sref-active="active" ng-if="appController.isAuthenticated()"><a href="" ui-sref="logout" cm-close-navbar><i class="fa fa-sign-out fa-fw"></i>&nbsp; Sign Out</a></li>
