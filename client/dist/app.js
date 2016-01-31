@@ -16,6 +16,7 @@
         .config([
             "$stateProvider",
             "$urlRouterProvider",
+            '$authProvider',
             Router ]);
 
     /**
@@ -24,7 +25,7 @@
      * @param $urlRouterProvider
      * @constructor
      */
-    function Router($stateProvider, $urlRouterProvider){
+    function Router($stateProvider, $urlRouterProvider, $authProvider){
 
         /**
          * Home
@@ -41,6 +42,9 @@
             url: "/dashboard",
             controller: "DashboardController",
             controllerAs: "dashboard",
+            resolve: {
+                loginRequired: loginRequired
+            },
             templateUrl: '/components/dashboard/dashboard.html'
         });
 
@@ -51,6 +55,9 @@
             url: "/dashboard/contact/new",
             controller: "EditContactController",
             controllerAs: "editContact",
+            resolve: {
+                loginRequired: loginRequired
+            },
             templateUrl: '/components/dashboard/edit/editContact.html'
         });
 
@@ -61,6 +68,9 @@
             url: "/dashboard/contact/:id",
             controller: "EditContactController",
             controllerAs: "editContact",
+            resolve: {
+                loginRequired: loginRequired
+            },
             templateUrl: '/components/dashboard/edit/editContact.html'
         });
 
@@ -130,6 +140,10 @@
 
         $urlRouterProvider.when("", "/");
         $urlRouterProvider.otherwise('/404');
+
+        $authProvider.google({
+            clientId: '449344279332-bcfhd8oar650umuve9sk73hios44dh63.apps.googleusercontent.com'
+        });
 
         function skipIfLoggedIn($q, $auth) {
             var deferred = $q.defer();

@@ -12,6 +12,7 @@ var UserSchema = new Schema({
     password: { type: String, select: false },
     displayName: String,
     picture: String,
+    google: String,
     created: { type: "Date", default: Date.now() }
 });
 

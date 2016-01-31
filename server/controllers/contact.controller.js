@@ -6,7 +6,7 @@ var Contact = require("../models/contact.model");
  * @param res
  */
 exports.index = function(req, res) {
-    Contact.find({}).sort({"created": -1}).exec(function(err, contact) {
+    Contact.find({ user: req.user }).sort({"created": -1}).exec(function(err, contact) {
         if (err) {
             res.send(400, err.message);
         }
