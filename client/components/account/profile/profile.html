@@ -1,5 +1,10 @@
 <div class="container">
-    <div class="panel panel-default">
+    <div class="page-header">
+        <h1>
+            Profile <small> edit your personal data</small>
+        </h1>
+    </div>
+    <div class="panel panel-primary">
         <div class="panel-heading">Profile</div>
         <div class="panel-body">
             <legend><i class="ion-clipboard"></i> Edit My Profile</legend>
@@ -21,86 +26,16 @@
         </div>
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
         <div class="panel-heading">Accounts</div>
         <div class="panel-body">
             <legend><i class="ion-link"></i> Linked Accounts</legend>
             <div class="btn-group-vertical">
-                <button class="btn btn-sm btn-danger" ng-if="profile.user.facebook" ng-click="profile.unlink('facebook')">
-                    <i class="ion-social-facebook"></i> Unlink Facebook Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!profile.user.facebook" ng-click="profile.link('facebook')">
-                    <i class="ion-social-facebook"></i> Link Facebook Account
-                </button>
-
                 <button class="btn btn-sm btn-danger" ng-if="profile.user.google" ng-click="profile.unlink('google')">
-                    <i class="ion-social-googleplus"></i> Unlink Google Account
+                    <i class="fa fa-google"></i>  Unlink Google Account
                 </button>
                 <button class="btn btn-sm btn-primary" ng-if="!profile.user.google" ng-click="profile.link('google')">
-                    <i class="ion-social-googleplus"></i> Link Google Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="profile.user.linkedin" ng-click="profile.unlink('linkedin')">
-                    <i class="ion-social-linkedin"></i> Unlink LinkedIn Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!profile.user.linkedin" ng-click="profile.link('linkedin')">
-                    <i class="ion-social-linkedin"></i> Link LinkedIn Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="profile.user.twitter" ng-click="profile.unlink('twitter')">
-                    <i class="ion-social-twitter"></i> Unlink Twitter Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!profile.user.twitter" ng-click="profile.link('twitter')">
-                    <i class="ion-social-twitter"></i> Link Twitter Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="profile.user.github" ng-click="profile.unlink('github')">
-                    <i class="ion-social-github"></i> Unlink GitHub Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.github" ng-click="link('github')">
-                    <i class="ion-social-github"></i> Link GitHub Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="profile.user.instagram" ng-click="profile.unlink('instagram')">
-                    <i class="ion-social-instagram"></i> Unlink Instagram Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!profile.user.instagram" ng-click="profile.link('instagram')">
-                    <i class="ion-social-instagram"></i> Link Instagram Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="profile.user.foursquare" ng-click="profile.unlink('foursquare')">
-                    <i class="ion-social-foursquare"></i> Unlink Foursquare Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!profile.user.foursquare" ng-click="profile.link('foursquare')">
-                    <i class="ion-social-foursquare"></i> Link Foursquare Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="profile.user.yahoo" ng-click="profile.unlink('yahoo')">
-                    <i class="ion-social-yahoo"></i> Unlink Yahoo Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!profile.user.yahoo" ng-click="profile.link('yahoo')">
-                    <i class="ion-social-yahoo"></i> Link Yahoo Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="profile.user.live" ng-click="profile.unlink('live')">
-                    <i class="ion-social-windows"></i> Unlink Windows Live Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!profile.user.live" ng-click="profile.link('live')">
-                    <i class="ion-social-windows"></i> Link Windows Live Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="profile.user.twitch" ng-click="profile.link('twitch')">
-                    <i class="ion-social-twitch"></i> Unlink Twitch Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!profile.user.twitch" ng-click="profile.link('twitch')">
-                    <i class="ion-social-twitch"></i> Link Twitch Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="profile.user.twitch" ng-click="profile.link('bitbucket')">
-                    <i class="fa fa-bitbucket"></i> Unlink Bitbucket Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!profile.user.twitch" ng-click="profile.link('bitbucket')">
-                    <i class="fa fa-bitbucket"></i> Link Bitbucket Account
+                    <i class="fa fa-google"></i>  Link Google Account
                 </button>
             </div>
         </div>
