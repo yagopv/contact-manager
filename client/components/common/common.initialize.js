@@ -33,7 +33,7 @@
             controller: "DashboardController",
             controllerAs: "dashboard",
             resolve: {
-                loginRequired: loginRequired
+                loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
             templateUrl: '/components/dashboard/dashboard.html'
         });
@@ -46,7 +46,7 @@
             controller: "EditContactController",
             controllerAs: "editContact",
             resolve: {
-                loginRequired: loginRequired
+                loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
             templateUrl: '/components/dashboard/edit/editContact.html'
         });
@@ -59,7 +59,7 @@
             controller: "EditContactController",
             controllerAs: "editContact",
             resolve: {
-                loginRequired: loginRequired
+                loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
             templateUrl: '/components/dashboard/edit/editContact.html'
         });
@@ -80,7 +80,7 @@
             controller: 'LoginController',
             controllerAs: 'login',
             resolve: {
-                skipIfLoggedIn: skipIfLoggedIn
+                skipIfLoggedIn: ['$q', '$auth', skipIfLoggedIn]
             },
             templateUrl: '/components/account/login/login.html'
         });
@@ -93,7 +93,7 @@
             controller: 'SignupController',
             controllerAs: 'signup',
             resolve: {
-                skipIfLoggedIn: skipIfLoggedIn
+                skipIfLoggedIn: ['$q', '$auth', skipIfLoggedIn]
             },
             templateUrl: '/components/account/signup/signup.html'
         });
@@ -115,7 +115,7 @@
             controller: 'ProfileController',
             controllerAs: 'profile',
             resolve: {
-                loginRequired: loginRequired
+                loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
             templateUrl: '/components/account/profile/profile.html'
         });
