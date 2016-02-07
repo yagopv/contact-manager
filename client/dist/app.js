@@ -190,7 +190,7 @@
     "use strict";
 
     angular.module("app.common")
-        .directive("cmCloseNavbar", CloseNavbar);
+        .directive("closeNavbar", CloseNavbar);
 
     /**
      * Close navbar directive
