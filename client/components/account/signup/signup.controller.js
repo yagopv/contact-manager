@@ -2,11 +2,12 @@
    'use strict';
 
     angular.module('contactManager.account')
-        .controller('SignupController', ['$location', '$auth', 'toastr', SignupController]);
+        .controller('SignupController', ['$location', '$auth', 'toastr', 'LoadingFactory', SignupController]);
 
-    function SignupController($location, $auth, toastr) {
+    function SignupController($location, $auth, toastr, LoadingFactory) {
         var self = this;
         this.signup = function() {
+            LoadingFactory.show();
             $auth.signup(self.user)
                 .then(function(response) {
                     $auth.setToken(response);
@@ -15,6 +16,9 @@
                 })
                 .catch(function(response) {
                     toastr.error(response.data.message);
+                })
+                .finally(function() {
+                    LoadingFactory.hide();
                 });
         };
     }

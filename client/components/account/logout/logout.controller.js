@@ -3,13 +3,16 @@
     'use strict';
 
     angular.module('contactManager.account')
-        .controller('LogoutController', ['$auth', 'toastr', '$state', LogoutController]);
+        .controller('LogoutController', ['$auth', 'toastr', '$state', 'LoadingFactory', LogoutController]);
 
-    function LogoutController($auth, toastr, $state) {
+    function LogoutController($auth, toastr, $state, LoadingFactory) {
         if (!$auth.isAuthenticated()) { return; }
+
+        LoadingFactory.show();
+
         $auth.logout()
             .then(function() {
-                toastr.info('You have been logged out');
+                LoadingFactory.hide();
                 $state.go("home");
             });
     };

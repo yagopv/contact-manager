@@ -2,25 +2,28 @@
    'use strict';
 
     angular.module('contactManager.account')
-        .controller('LoginController', ['$location', '$auth', 'toastr', LoginController]);
+        .controller('LoginController', ['$state', '$auth', 'toastr', 'LoadingFactory', LoginController]);
 
-    function LoginController($location, $auth, toastr) {
+    function LoginController($state, $auth, toastr, LoadingFactory) {
         this.login = function() {
+            LoadingFactory.show();
             $auth.login(this.user)
                 .then(function() {
-                    toastr.success('You have successfully signed in!');
-                    $location.path('/');
+                    $state.go('dashboard');
                 })
                 .catch(function(error) {
                     toastr.error(error.data.message, error.status);
+                })
+                .finally(function() {
+                    LoadingFactory.hide();
                 });
         };
 
         this.authenticate = function(provider) {
+            LoadingFactory.show();
             $auth.authenticate(provider)
                 .then(function() {
-                    toastr.success('You have successfully signed in with ' + provider + '!');
-                    $location.path('/');
+                    $state.go('dashboard');
                 })
                 .catch(function(error) {
                     if (error.error) {
@@ -32,6 +35,9 @@
                     } else {
                         toastr.error(error);
                     }
+                })
+                .finally(function() {
+                    LoadingFactory.hide();
                 });
         };
     }
