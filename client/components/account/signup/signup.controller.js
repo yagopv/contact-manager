@@ -1,7 +1,7 @@
 (function() {
    'use strict';
 
-    angular.module('contactManager.account')
+    angular.module('app.account')
         .controller('SignupController', ['$location', '$auth', 'toastr', 'LoadingFactory', SignupController]);
 
     function SignupController($location, $auth, toastr, LoadingFactory) {

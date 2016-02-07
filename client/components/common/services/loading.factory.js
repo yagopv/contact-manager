@@ -2,7 +2,7 @@
  * Little utility for showing a Loader
  */
 (function() {
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .factory("LoadingFactory", function() {
             return {
                 status: false,

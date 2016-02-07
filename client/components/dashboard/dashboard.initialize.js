@@ -5,8 +5,8 @@
 
     "use strict";
 
-    angular.module('contactManager.dashboard', [
-            "contactManager.common",
+    angular.module('app.dashboard', [
+            "app.common",
             "ui.bootstrap.datetimepicker",
             "ngDialog"]);
 

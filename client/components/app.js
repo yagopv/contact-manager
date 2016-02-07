@@ -6,10 +6,10 @@
 
     "use strict";
 
-    angular.module("contactManager", [
-            "contactManager.dashboard",
-            "contactManager.account",
-            "contactManager.common"])
+    angular.module("app", [
+            "app.dashboard",
+            "app.account",
+            "app.common"])
 
         .config(["$uiViewScrollProvider", Config ])
         .controller("AppController", [ "LoadingFactory", "$auth", AppController ]);

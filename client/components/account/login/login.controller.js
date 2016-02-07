@@ -1,7 +1,7 @@
 (function() {
    'use strict';
 
-    angular.module('contactManager.account')
+    angular.module('app.account')
         .controller('LoginController', ['$state', '$auth', 'toastr', 'LoadingFactory', LoginController]);
 
     function LoginController($state, $auth, toastr, LoadingFactory) {

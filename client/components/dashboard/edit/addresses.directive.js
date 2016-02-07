@@ -5,7 +5,7 @@
 
     "use strict";
 
-    angular.module("contactManager.dashboard")
+    angular.module("app.dashboard")
         .directive("cmAddresses", AddressesDirective);
 
     /**

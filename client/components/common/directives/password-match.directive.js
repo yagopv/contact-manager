@@ -2,7 +2,7 @@
 
     "use strict";
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .directive("passwordMatch", [PasswordMatchDirective]);
 
     function PasswordMatchDirective() {

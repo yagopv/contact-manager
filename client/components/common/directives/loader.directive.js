@@ -2,7 +2,7 @@
 
     "use strict";
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .directive("cmLoader", ["LoadingFactory", "$window", LoaderDirective]);
 
     function LoaderDirective(LoadingFactory, $window) {

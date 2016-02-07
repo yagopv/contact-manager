@@ -5,6 +5,6 @@
 
     "use strict";
 
-    angular.module('contactManager.account', ['contactManager.common', 'toastr', 'ngMessages']);
+    angular.module('app.account', ['app.common', 'toastr', 'ngMessages']);
 
 })();

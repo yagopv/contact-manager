@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('contactManager.account')
+    angular.module('app.account')
         .controller('LogoutController', ['$auth', 'toastr', '$state', 'LoadingFactory', LogoutController]);
 
     function LogoutController($auth, toastr, $state, LoadingFactory) {

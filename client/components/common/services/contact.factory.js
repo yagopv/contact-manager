@@ -3,7 +3,7 @@
  */
 (function() {
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .factory("ContactFactory", ["$http", "$q", ContactFactory]);
 
     /**

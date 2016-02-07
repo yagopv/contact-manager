@@ -1,8 +1,8 @@
 /**
- * Define module contactManager.common
+ * Define module app.common
  */
 (function() {
-    angular.module("contactManager.common", ["ui.router", "satellizer"])
+    angular.module("app.common", ["ui.router", "satellizer"])
         .config([
             "$stateProvider",
             "$urlRouterProvider",

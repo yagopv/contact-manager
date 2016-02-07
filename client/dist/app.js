@@ -5,14 +5,14 @@
 
     "use strict";
 
-    angular.module('contactManager.account', ['contactManager.common', 'toastr', 'ngMessages']);
+    angular.module('app.account', ['app.common', 'toastr', 'ngMessages']);
 
 })();
 /**
- * Define module contactManager.common
+ * Define module app.common
  */
 (function() {
-    angular.module("contactManager.common", ["ui.router", "satellizer"])
+    angular.module("app.common", ["ui.router", "satellizer"])
         .config([
             "$stateProvider",
             "$urlRouterProvider",
@@ -175,8 +175,8 @@
 
     "use strict";
 
-    angular.module('contactManager.dashboard', [
-            "contactManager.common",
+    angular.module('app.dashboard', [
+            "app.common",
             "ui.bootstrap.datetimepicker",
             "ngDialog"]);
 
@@ -189,7 +189,7 @@
 
     "use strict";
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .directive("cmCloseNavbar", CloseNavbar);
 
     /**
@@ -212,7 +212,7 @@
 
     "use strict";
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .directive("cmLoader", ["LoadingFactory", "$window", LoaderDirective]);
 
     function LoaderDirective(LoadingFactory, $window) {
@@ -243,7 +243,7 @@
 
     "use strict";
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .directive("passwordMatch", [PasswordMatchDirective]);
 
     function PasswordMatchDirective() {
@@ -268,7 +268,7 @@
 
     "use strict";
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .directive("passwordStrength", [PasswordStrengthDirective]);
 
     function PasswordStrengthDirective() {
@@ -394,7 +394,7 @@
 (function() {
     "use strict";
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .directive("cmScalePanel", ScalePanelDirective);
 
     /**
@@ -423,7 +423,7 @@
 (function() {
     "use strict";
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .directive("cmValidationSummary", ValidationSummaryDirective);
 
 
@@ -468,7 +468,7 @@
 
     "use strict";
 
-    angular.module("contactManager.dashboard")
+    angular.module("app.dashboard")
         .directive("cmAddresses", AddressesDirective);
 
     /**
@@ -568,7 +568,7 @@
 (function() {
     "use strict";
 
-    angular.module("contactManager.dashboard")
+    angular.module("app.dashboard")
         .directive("cmMails", MailsDirective);
 
     /**
@@ -640,7 +640,7 @@
 (function() {
     "use strict";
 
-    angular.module("contactManager.dashboard")
+    angular.module("app.dashboard")
         .directive("cmPhones", PhonesDirective);
 
     /**
@@ -710,7 +710,7 @@
  */
 (function() {
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .factory("AccountFactory", ["$http", AccountFactory]);
 
     function AccountFactory($http)  {
@@ -738,7 +738,7 @@
  */
 (function() {
 
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .factory("ContactFactory", ["$http", "$q", ContactFactory]);
 
     /**
@@ -854,7 +854,7 @@
  * Little utility for showing a Loader
  */
 (function() {
-    angular.module("contactManager.common")
+    angular.module("app.common")
         .factory("LoadingFactory", function() {
             return {
                 status: false,
@@ -875,7 +875,7 @@
 
     "use strict";
 
-    angular.module('contactManager.dashboard')
+    angular.module('app.dashboard')
         .controller('DashboardController', ["ContactFactory", "$state", "LoadingFactory" ,DashboardController]);
 
     /**
@@ -910,7 +910,7 @@
 (function() {
    'use strict';
 
-    angular.module('contactManager.account')
+    angular.module('app.account')
         .controller('LoginController', ['$state', '$auth', 'toastr', 'LoadingFactory', LoginController]);
 
     function LoginController($state, $auth, toastr, LoadingFactory) {
@@ -956,7 +956,7 @@
 
     'use strict';
 
-    angular.module('contactManager.account')
+    angular.module('app.account')
         .controller('LogoutController', ['$auth', 'toastr', '$state', 'LoadingFactory', LogoutController]);
 
     function LogoutController($auth, toastr, $state, LoadingFactory) {
@@ -976,7 +976,7 @@
 
     'use strict';
 
-    angular.module('contactManager.account')
+    angular.module('app.account')
         .controller('ProfileController', ['$auth', 'toastr', 'AccountFactory', ProfileController]);
 
     function ProfileController($auth, toastr, Account) {
@@ -1030,7 +1030,7 @@
 (function() {
    'use strict';
 
-    angular.module('contactManager.account')
+    angular.module('app.account')
         .controller('SignupController', ['$location', '$auth', 'toastr', 'LoadingFactory', SignupController]);
 
     function SignupController($location, $auth, toastr, LoadingFactory) {
@@ -1059,7 +1059,7 @@
 
     "use strict";
 
-    angular.module("contactManager.dashboard")
+    angular.module("app.dashboard")
         .controller("EditContactController", [
             "ContactFactory",
             "$stateParams",
@@ -1183,10 +1183,10 @@
 
     "use strict";
 
-    angular.module("contactManager", [
-            "contactManager.dashboard",
-            "contactManager.account",
-            "contactManager.common"])
+    angular.module("app", [
+            "app.dashboard",
+            "app.account",
+            "app.common"])
 
         .config(["$uiViewScrollProvider", Config ])
         .controller("AppController", [ "LoadingFactory", "$auth", AppController ]);
