@@ -28,7 +28,7 @@
 
     <div class="row mt20">
         <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="contact in dashboard.contacts | filter:dashboard.search" ng-click="dashboard.editContact(contact)">
-            <div class="contact panel panel-primary" cm-scale-panel>
+            <div class="contact panel panel-primary" scale-panel>
                 <div class="panel-heading">
                     <span class="lead">{{ contact.name + " " + contact.lastname }}</span>
                 </div>

@@ -5,7 +5,7 @@
     "use strict";
 
     angular.module("app.common")
-        .directive("cmValidationSummary", ValidationSummaryDirective);
+        .directive("validationSummary", ValidationSummaryDirective);
 
 
     /**

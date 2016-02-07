@@ -3,9 +3,9 @@
     "use strict";
 
     angular.module("app.common")
-        .directive("cmLoader", ["LoadingFactory", "$window", LoaderDirective]);
+        .directive("appLoader", ["$window", LoaderDirective]);
 
-    function LoaderDirective(LoadingFactory, $window) {
+    function LoaderDirective($window) {
         return {
             restrict: "EAC",
             scope: { },

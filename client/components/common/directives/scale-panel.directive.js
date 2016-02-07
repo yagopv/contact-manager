@@ -5,7 +5,7 @@
     "use strict";
 
     angular.module("app.common")
-        .directive("cmScalePanel", ScalePanelDirective);
+        .directive("scalePanel", ScalePanelDirective);
 
     /**
      * Scale panel directive
