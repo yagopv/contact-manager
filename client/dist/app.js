@@ -469,7 +469,7 @@
     "use strict";
 
     angular.module("app.dashboard")
-        .directive("cmAddresses", AddressesDirective);
+        .directive("contactAddresses", AddressesDirective);
 
     /**
      * Address directive
@@ -569,7 +569,7 @@
     "use strict";
 
     angular.module("app.dashboard")
-        .directive("cmMails", MailsDirective);
+        .directive("contactMails", MailsDirective);
 
     /**
      * Mails directive
@@ -641,7 +641,7 @@
     "use strict";
 
     angular.module("app.dashboard")
-        .directive("cmPhones", PhonesDirective);
+        .directive("contactPhones", PhonesDirective);
 
     /**
      * Phones directive
@@ -908,6 +908,26 @@
 
 })();
 (function() {
+
+    'use strict';
+
+    angular.module('app.account')
+        .controller('LogoutController', ['$auth', 'toastr', '$state', 'LoadingFactory', LogoutController]);
+
+    function LogoutController($auth, toastr, $state, LoadingFactory) {
+        if (!$auth.isAuthenticated()) { return; }
+
+        LoadingFactory.show();
+
+        $auth.logout()
+            .then(function() {
+                LoadingFactory.hide();
+                $state.go("home");
+            });
+    };
+
+})();
+(function() {
    'use strict';
 
     angular.module('app.account')
@@ -950,26 +970,6 @@
                 });
         };
     }
-
-})();
-(function() {
-
-    'use strict';
-
-    angular.module('app.account')
-        .controller('LogoutController', ['$auth', 'toastr', '$state', 'LoadingFactory', LogoutController]);
-
-    function LogoutController($auth, toastr, $state, LoadingFactory) {
-        if (!$auth.isAuthenticated()) { return; }
-
-        LoadingFactory.show();
-
-        $auth.logout()
-            .then(function() {
-                LoadingFactory.hide();
-                $state.go("home");
-            });
-    };
 
 })();
 (function() {

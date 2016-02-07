@@ -5,7 +5,7 @@
     "use strict";
 
     angular.module("app.dashboard")
-        .directive("cmPhones", PhonesDirective);
+        .directive("contactPhones", PhonesDirective);
 
     /**
      * Phones directive

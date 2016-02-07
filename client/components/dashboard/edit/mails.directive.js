@@ -5,7 +5,7 @@
     "use strict";
 
     angular.module("app.dashboard")
-        .directive("cmMails", MailsDirective);
+        .directive("contactMails", MailsDirective);
 
     /**
      * Mails directive
