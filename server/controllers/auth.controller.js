@@ -1,8 +1,8 @@
-var User = require("../models/user.model");
-var moment = require('moment');
-var jwt = require('jwt-simple');
-var config = process.env.NODE_ENV ? require('../config/prod') : require('../config/dev');
-var request = require('request');
+const User = require("../models/user.model");
+const moment = require('moment');
+const jwt = require('jwt-simple');
+const config = process.env.NODE_ENV ? require('../config/prod') : require('../config/dev');
+const request = require('request');
 
 exports.login = function(req, res) {
     User.findOne({ email: req.body.email }, '+password', function(err, user) {

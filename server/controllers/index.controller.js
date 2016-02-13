@@ -1,5 +1,3 @@
-var express = require('express');
-
 /**
  * Render the SPA index page
  * @param req

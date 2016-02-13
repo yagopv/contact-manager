@@ -2,9 +2,9 @@
  * User schema
  * @type {*|exports|module.exports}
  */
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
-var bcrypt = require('bcryptjs');
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const bcrypt = require('bcryptjs');
 
 //User Schema
 var UserSchema = new Schema({

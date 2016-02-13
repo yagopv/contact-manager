@@ -2,7 +2,8 @@
  * Contact schema
  * @type {*|exports|module.exports}
  */
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
+
 var Schema = mongoose.Schema;
 
 //Define Phone subdoc
