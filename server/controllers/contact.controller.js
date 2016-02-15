@@ -1,4 +1,4 @@
-var Contact = require("../models/contact.model");
+const Contact = require("../models/contact.model");
 
 /**
  * Get all the contacts

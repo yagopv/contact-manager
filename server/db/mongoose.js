@@ -2,8 +2,8 @@
  * Initialize mongodb connection using mongoose
  * @type {*|exports|module.exports}
  */
-var mongoose = require("mongoose");
-var config = process.env.NODE_ENV ? require('../config/prod') : require('../config/dev');
+const mongoose = require("mongoose");
+const config = process.env.NODE_ENV ? require('../config/prod') : require('../config/dev');
 
 mongoose.connection.on("error", console.log);
 mongoose.connection.on("disconnected", connect);
