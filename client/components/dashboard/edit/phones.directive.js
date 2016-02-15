@@ -4,20 +4,16 @@
 (function() {
     "use strict";
 
-    angular.module("app.dashboard")
-        .directive("contactPhones", PhonesDirective);
-
     /**
      * Phones directive
      * @returns {{restrict: string, replace: boolean, scope: {}, bindToController: {phones: string}, controllerAs: string, controller: controller, templateUrl: string}}
      * @constructor
      */
-    function PhonesDirective() {
-        return {
+    angular.module("app.dashboard")
+        .component("contactPhones", {
             restrict: "EA",
             replace: true,
-            scope: { },
-            bindToController: {
+            bindings: {
                 phones: "="
             },
             controllerAs: "ctrl",
@@ -65,7 +61,5 @@
                 };
             },
             templateUrl: "/components/dashboard/edit/phones.html"
-        }
-    }
-
+        });
 })();

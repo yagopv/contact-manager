@@ -18,7 +18,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="mail in ctrl.emails track by $index | orderBy:'created':true">
+            <tr ng-repeat="mail in ctrl.emails track by $index">
                 <td>{{ mail.kind.substr(0,1).toUpperCase() + mail.kind.substr(1) }}</td>
                 <td>{{ mail.email }}</td>
                 <td class="text-right" ng-style="{'visibility': ctrl.mailsFormVisibility ? 'hidden' : 'visible'}">

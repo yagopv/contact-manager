@@ -18,7 +18,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="phone in ctrl.phones track by $index | orderBy:'created':true">
+                <tr ng-repeat="phone in ctrl.phones track by $index">
                     <td>{{ phone.kind.substr(0,1).toUpperCase() + phone.kind.substr(1) }}</td>
                     <td>{{ phone.number }}</td>
                     <td class="text-right" ng-style="{'visibility': ctrl.phoneFormVisibility ? 'hidden' : 'visible'}">

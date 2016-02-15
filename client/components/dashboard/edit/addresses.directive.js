@@ -5,21 +5,16 @@
 
     "use strict";
 
-    angular.module("app.dashboard")
-        .directive("contactAddresses", AddressesDirective);
-
     /**
-     * Address directive
+     * Address component
      * @returns {{restrict: string, replace: boolean, scope: {}, bindToController: {addresses: string}, controllerAs: string, controller: controller, templateUrl: string}}
      * @constructor
      */
-    function AddressesDirective() {
-
-        return {
+    angular.module("app.dashboard")
+        .component("contactAddresses", {
             restrict: "EA",
             replace: true,
-            scope: { },
-            bindToController: {
+            bindings: {
                 addresses: "="
             },
             controllerAs: "ctrl",
@@ -94,8 +89,5 @@
                 };
             },
             templateUrl: "/components/dashboard/edit/addresses.html"
-        }
-
-    }
-
+        });
 })();

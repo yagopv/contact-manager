@@ -4,20 +4,16 @@
 (function() {
     "use strict";
 
-    angular.module("app.dashboard")
-        .directive("contactMails", MailsDirective);
-
     /**
-     * Mails directive
+     * Mails component
      * @returns {{restrict: string, replace: boolean, scope: {}, bindToController: {emails: string}, controllerAs: string, controller: controller, templateUrl: string}}
      * @constructor
      */
-    function MailsDirective() {
-        return {
+    angular.module("app.dashboard")
+        .component("contactMails", {
             restrict: "EA",
             replace: true,
-            scope: { },
-            bindToController: {
+            bindings: {
                 emails: "="
             },
             controllerAs: "ctrl",
@@ -66,7 +62,6 @@
                 };
             },
             templateUrl: "/components/dashboard/edit/mails.html"
-        }
-    }
+        });
 
 })();
