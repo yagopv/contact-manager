@@ -13,5 +13,4 @@ connect();
 function connect () {
     var options = { server: { socketOptions: { keepAlive: 1 } } };
     mongoose.connect(config.connection, options);
-    console.log("Mongoose connected succesfully!!");
 }

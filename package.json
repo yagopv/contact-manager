@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon server"
+    "start": "nodemon server",
+    "cluster": "node cluster"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
