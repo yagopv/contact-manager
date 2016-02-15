@@ -9,12 +9,15 @@ bower install
 #####Install gulp if not available
 npm install -g gulp
 
+#####Install nodemon for server automatic restarts
+npm install -g nodemon
+
 #####Start MongoDB server
 mongod
 
-#####Build app
-gulp concat (for debug)
+#####Gulp debug
+gulp watch (for debug)
 gulp min (for production)
 
 #####Start app
-npm start
+npm start (nodemon server)

@@ -1,12 +1,13 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     rimraf = require('rimraf'),
     concat = require('gulp-concat'),
     cssmin = require('gulp-cssmin'),
     uglify = require('gulp-uglify'),
     path = require('path'),
-    nodemon = require('gulp-nodemon');
+    nodemon = require('gulp-nodemon'),
+    exec = require('child_process').exec;
 
-var paths = {
+const paths = {
     webroot: path.join(process.cwd(), 'client')
 };
 
@@ -115,19 +116,9 @@ gulp.task('concat:vendorCssDebug', function () {
 
 gulp.task('concat', ['concat:js', 'concat:css', 'concat:vendorJsDebug', 'concat:vendorCssDebug']);
 
-
 // Watch for changes in the client app directory
 gulp.task('watch:client', function () {
     gulp.watch([paths.appJs, paths.appCss], ['concat']);
 });
 
-//Restart server on change
-gulp.task('watch:server', function() {
-    nodemon({
-        script: './server.js',
-        ext: 'js',
-        env: { 'NODE_ENV': 'development' }
-    });
-});
-
-gulp.task('watch', ['concat', 'watch:client', 'watch:server']);
+gulp.task('watch', ['concat', 'watch:client']);
