@@ -25,7 +25,7 @@ paths.appCss = path.join(paths.webroot, 'css/**/*.css');
 
 paths.vendorJs = [
     path.join(paths.webroot, 'lib/jquery/dist/jquery.js'),
-    path.join(paths.webroot, 'lib/bootswatch-dist/js/bootstrap.js'),
+    path.join(paths.webroot, 'lib/bootstrap/dist/js/bootstrap.js'),
     path.join(paths.webroot, 'lib/moment/moment.js'),
     path.join(paths.webroot, 'lib/angular/angular.js'),
     path.join(paths.webroot, 'lib/angular-messages/angular-messages.js'),
@@ -37,7 +37,7 @@ paths.vendorJs = [
 ];
 
 paths.vendorCss = [
-    path.join(paths.webroot, 'lib/bootswatch-dist/css/bootstrap.css'),
+    path.join(paths.webroot, 'lib/bootstrap/dist/css/bootstrap.css'),
     path.join(paths.webroot, 'lib/font-awesome/css/font-awesome.css'),
     path.join(paths.webroot, 'lib/angular-bootstrap-datetimepicker/src/css/datetimepicker.css'),
     path.join(paths.webroot, 'lib/ng-dialog/css/ngDialog.css'),

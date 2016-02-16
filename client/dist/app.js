@@ -468,21 +468,16 @@
 
     "use strict";
 
-    angular.module("app.dashboard")
-        .directive("contactAddresses", AddressesDirective);
-
     /**
-     * Address directive
+     * Address component
      * @returns {{restrict: string, replace: boolean, scope: {}, bindToController: {addresses: string}, controllerAs: string, controller: controller, templateUrl: string}}
      * @constructor
      */
-    function AddressesDirective() {
-
-        return {
+    angular.module("app.dashboard")
+        .component("contactAddresses", {
             restrict: "EA",
             replace: true,
-            scope: { },
-            bindToController: {
+            bindings: {
                 addresses: "="
             },
             controllerAs: "ctrl",
@@ -557,10 +552,7 @@
                 };
             },
             templateUrl: "/components/dashboard/edit/addresses.html"
-        }
-
-    }
-
+        });
 })();
 /**
  * Manage mails
@@ -568,20 +560,16 @@
 (function() {
     "use strict";
 
-    angular.module("app.dashboard")
-        .directive("contactMails", MailsDirective);
-
     /**
-     * Mails directive
+     * Mails component
      * @returns {{restrict: string, replace: boolean, scope: {}, bindToController: {emails: string}, controllerAs: string, controller: controller, templateUrl: string}}
      * @constructor
      */
-    function MailsDirective() {
-        return {
+    angular.module("app.dashboard")
+        .component("contactMails", {
             restrict: "EA",
             replace: true,
-            scope: { },
-            bindToController: {
+            bindings: {
                 emails: "="
             },
             controllerAs: "ctrl",
@@ -630,8 +618,7 @@
                 };
             },
             templateUrl: "/components/dashboard/edit/mails.html"
-        }
-    }
+        });
 
 })();
 /**
@@ -640,20 +627,16 @@
 (function() {
     "use strict";
 
-    angular.module("app.dashboard")
-        .directive("contactPhones", PhonesDirective);
-
     /**
      * Phones directive
      * @returns {{restrict: string, replace: boolean, scope: {}, bindToController: {phones: string}, controllerAs: string, controller: controller, templateUrl: string}}
      * @constructor
      */
-    function PhonesDirective() {
-        return {
+    angular.module("app.dashboard")
+        .component("contactPhones", {
             restrict: "EA",
             replace: true,
-            scope: { },
-            bindToController: {
+            bindings: {
                 phones: "="
             },
             controllerAs: "ctrl",
@@ -701,9 +684,7 @@
                 };
             },
             templateUrl: "/components/dashboard/edit/phones.html"
-        }
-    }
-
+        });
 })();
 /**
  * Service for dealing with account communication
@@ -908,26 +889,6 @@
 
 })();
 (function() {
-
-    'use strict';
-
-    angular.module('app.account')
-        .controller('LogoutController', ['$auth', 'toastr', '$state', 'LoadingFactory', LogoutController]);
-
-    function LogoutController($auth, toastr, $state, LoadingFactory) {
-        if (!$auth.isAuthenticated()) { return; }
-
-        LoadingFactory.show();
-
-        $auth.logout()
-            .then(function() {
-                LoadingFactory.hide();
-                $state.go("home");
-            });
-    };
-
-})();
-(function() {
    'use strict';
 
     angular.module('app.account')
@@ -970,6 +931,26 @@
                 });
         };
     }
+
+})();
+(function() {
+
+    'use strict';
+
+    angular.module('app.account')
+        .controller('LogoutController', ['$auth', 'toastr', '$state', 'LoadingFactory', LogoutController]);
+
+    function LogoutController($auth, toastr, $state, LoadingFactory) {
+        if (!$auth.isAuthenticated()) { return; }
+
+        LoadingFactory.show();
+
+        $auth.logout()
+            .then(function() {
+                LoadingFactory.hide();
+                $state.go("home");
+            });
+    };
 
 })();
 (function() {

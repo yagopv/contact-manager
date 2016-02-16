@@ -11,7 +11,7 @@
                     <th>Kind</th>
                     <th>Number</th>
                     <th class="text-right" ng-show="!ctrl.phoneFormVisibility">
-                        <button class="btn btn-primary btn-sm" ng-click="ctrl.changePhonesFormVisibility(true)">
+                        <button class="btn btn-default btn-sm" ng-click="ctrl.changePhonesFormVisibility(true)">
                             <i class="fa fa-plus"></i>
                         </button>
                     </th>
@@ -49,7 +49,7 @@
                 <input name="number" type="number" class="form-control input-sm" ng-model="ctrl.editPhone.number" placeholder="Phone number *" required>
             </div>
             <div class="btn-group btn-group-sm col-md-3" role="group">
-                <button type="submit" class="btn btn-primary" ng-click="ctrl.addPhone(ctrl.editPhone)">
+                <button type="submit" class="btn btn-default" ng-click="ctrl.addPhone(ctrl.editPhone)">
                     <i class="fa fa-plus"></i>
                 </button>
                 <button type="button" class="btn btn-danger" ng-click="ctrl.changePhonesFormVisibility(false)">

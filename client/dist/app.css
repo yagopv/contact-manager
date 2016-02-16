@@ -17,7 +17,7 @@ footer {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    background-color: #2780e3;
+    background-color: #222;
     color: #FFF;
 }
 
@@ -36,7 +36,7 @@ footer {
 
 /* Home & 404 */
 #home .jumbotron,#notFound .jumbotron {
-    background-color: #2780e3;
+    background-color: #222;
     color: #FFF;
 }
 
@@ -76,11 +76,6 @@ footer {
 }
 
 /* Bootstrap overrides */
-.input-group-addon {
-    background-color: #2780e3;
-    border-color: #2780e3;
-    color: #FFF;
-}
 
 .panel {
     cursor: pointer;

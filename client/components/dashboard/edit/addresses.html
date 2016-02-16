@@ -4,13 +4,13 @@
         <h3>Addresses</h3>
     </div>
 
-    <button class="btn btn-primary" ng-hide="ctrl.addressFormVisibility" ng-click="ctrl.changeAddressFormVisibility(true)">
+    <button class="btn btn-default" ng-hide="ctrl.addressFormVisibility" ng-click="ctrl.changeAddressFormVisibility(true)">
         <i class="fa fa-map-marker fa-fw"></i>&nbsp;Add New
     </button>
 
     <div class="row mt20" ng-hide="ctrl.addressFormVisibility">
         <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="address in ctrl.addresses track by $index" ng-click="ctrl.editAddress(address)">
-            <div class="panel panel-primary" scale-panel>
+            <div class="panel panel-default" scale-panel>
                 <div class="panel-heading">
                     <div>
                         <span class="lead">{{ address.kind.substr(0,1).toUpperCase() + address.kind.substr(1) }}</span>
@@ -37,7 +37,7 @@
         <em>Press + to add a new address</em>
     </p>
 
-    <button class="btn btn-primary" ng-show="ctrl.addressFormVisibility" ng-click="ctrl.addOrUpdateAddress(ctrl.address)">
+    <button class="btn btn-default" ng-show="ctrl.addressFormVisibility" ng-click="ctrl.addOrUpdateAddress(ctrl.address)">
         <i ng-if="ctrl.editMode" class="fa fa-save fa-fw"></i>
         <i ng-if="!ctrl.editMode" class="fa fa-plus fa-fw"></i>
     </button>
