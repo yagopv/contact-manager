@@ -6,12 +6,10 @@ const Contact = require("../models/contact.model");
  * @param res
  */
 exports.index = function(req, res) {
-    Contact.find({ user: req.user }).sort({"created": -1}).exec(function(err, contact) {
-        if (err) {
-            res.send(400, err.message);
-        }
-        res.status(200).json(contact);
-    });
+    Contact.find({ user: req.user }).sort({"created": -1})
+        .exec()
+        .catch(err => res.send(400, err.message))
+        .then(contact => res.status(200).json(contact));
 };
 
 /**
@@ -20,12 +18,10 @@ exports.index = function(req, res) {
  * @param res
  */
 exports.findById = function(req, res) {
-    Contact.findById(req.params.id, function(err, contact) {
-        if (err) {
-            res.send(400, err.message);
-        }
-        res.status(200).json(contact);
-    });
+    Contact.findById(req.params.id)
+        .exec()
+        .catch(err => res.send(400, err.message))
+        .then(contact => res.status(200).json(contact));
 };
 
 /**
@@ -37,12 +33,9 @@ exports.create = function(req, res) {
     var contact = new Contact(req.body.contact);
     contact.user = req.user;
 
-    contact.save(function(err, contact) {
-        if (err) {
-            res.send(400, err);
-        }
-        res.status(201).json(contact);
-    });
+    contact.save()
+        .catch(err => res.send(400, err))
+        .then(contact => res.status(201).json(contact));
 };
 
 /**
@@ -54,13 +47,9 @@ exports.update = function(req, res) {
     var contact = new Contact(req.body.contact);
     contact.user = req.user;
 
-    Contact.findByIdAndUpdate(req.params.id, contact, { new: true }, function(err, contact) {
-        if (err) {
-            res.status(400).send(err.message);
-        } else {
-            res.status(200).json(contact);
-        }
-    });
+    Contact.findByIdAndUpdate(req.params.id, contact, { new: true })
+        .catch(err => res.send(400, err))
+        .then(res.status(200).json(contact));
 };
 
 /**
@@ -69,10 +58,8 @@ exports.update = function(req, res) {
  * @param res
  */
 exports.remove = function(req, res) {
-    Contact.findByIdAndRemove(req.params.id, function(err, contact) {
-        if (err) {
-            res.send(400, err.message);
-        }
-        res.status(200).send();
-    });
+    Contact.findByIdAndRemove(req.params.id)
+        .exec()
+        .catch(err => res.send(400, err))
+        .then(res.status(200).send());
 };

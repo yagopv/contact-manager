@@ -7,6 +7,8 @@ const config = process.env.NODE_ENV ? require('../config/prod') : require('../co
 
 mongoose.connection.on("error", console.log);
 mongoose.connection.on("disconnected", connect);
+mongoose.Promise = Promise;
+
 connect();
 
 // Connect to mongodb
