@@ -1,35 +1,48 @@
 <div id="home">
 
-    <div class="jumbotron">
+    <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <div class="col-md-2 text-center">
+            <div class="col-md-2 text-xs-center">
                 <i class="fa fa-users fa-2x"></i>
             </div>
-            <div class="col-md-10 text-center">
-                <h1>Welcome to Contact Manager!!</h1>
-                <p>The application for managing your personal contacts</p>
+            <div class="col-md-10 text-xs-center">
+                <h1 class="display-4">Welcome to Contact Manager!!</h1>
+                <p class="lead">The application for managing your personal contacts</p>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="heading col-md-4 mt20">
-                <h2><i class="fa fa-dashboard"></i> Dashboard</h2>
-                <p>Managing your contacts never was easier. Check the awesome dashboard and find your favourite contacts</p>
-                <p><a class="btn btn-default col-md-12" href="" ui-sref="dashboard" role="button">Go to the dashboard now</a></p>
-            </div>
-            <div class="heading col-md-4 mt20">
-                <h2><i class="fa fa-user"></i> Add new contacts</h2>
-                <p>You can add personal information, phones, mails and addresses. The incredible add contact form allow you addings contacts quick and easy</p>
-                <p><a class="btn btn-default col-md-12" href="" ui-sref="newContact" role="button">Add new contact now</a></p>
-            </div>
-            <div class="heading col-md-4 mt20">
-                <h2><i class="fa fa-pencil"></i> Contact</h2>
-                <p>If you have any questions please don´t hesitate contacting with me</p>
-                <p><a class="btn btn-default col-md-12" href="" ui-sref="about" role="button">Check contact details</a></p>
+        <div class="card-deck-wrapper">
+            <div class="card-deck">
+                <div class="card text-xs-center">
+                    <h2 class="card-header"><i class="fa fa-dashboard"></i> Dashboard</h2>
+                    <div class="card-block">
+                        <p>Managing your contacts never was easier. Check the awesome dashboard and find your favourite contacts</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-primary" href="" ui-sref="dashboard" role="button">Go to the dashboard now</a>
+                    </div>
+                </div>
+                <div class="card text-xs-center">
+                    <h2 class="card-header"><i class="fa fa-user"></i> Add new contacts</h2>
+                    <div class="card-block">
+                        <p>You can add personal information, phones, mails and addresses. The incredible add contact form allow you addings contacts quick and easy</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-primary" href="" ui-sref="newContact" role="button">Add new contact now</a>
+                    </div>
+                </div>
+                <div class="card text-xs-center">
+                    <h2 class="card-header"><i class="fa fa-pencil"></i> Contact</h2>
+                    <div class="card-block">
+                        <p>If you have any questions please don´t hesitate contacting with me</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-primary" href="" ui-sref="about" role="button">Check contact details</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 </div>

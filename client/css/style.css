@@ -7,7 +7,6 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 75px;
-    padding-top: 50px;
 }
 
 footer {
@@ -35,10 +34,6 @@ footer {
 }
 
 /* Home & 404 */
-#home .jumbotron,#notFound .jumbotron {
-    background-color: #222;
-    color: #FFF;
-}
 
 #home .jumbotron i {
     display: block;
