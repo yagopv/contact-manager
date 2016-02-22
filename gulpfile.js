@@ -25,6 +25,7 @@ paths.appCss = path.join(paths.webroot, 'css/**/*.css');
 
 paths.vendorJs = [
     path.join(paths.webroot, 'lib/jquery/dist/jquery.js'),
+    path.join(paths.webroot, 'lib/tether/dist/js/tether.js'),
     path.join(paths.webroot, 'lib/bootstrap/dist/js/bootstrap.js'),
     path.join(paths.webroot, 'lib/moment/moment.js'),
     path.join(paths.webroot, 'lib/angular/angular.js'),
