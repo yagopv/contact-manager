@@ -1,8 +1,6 @@
 <div>
 
-    <div class="page-header">
-        <h3>Emails</h3>
-    </div>
+    <h3>Emails</h3>
 
     <div class="table-responsive">
         <table class="table">
@@ -11,7 +9,7 @@
                 <th>Kind</th>
                 <th>Mail</th>
                 <th class="text-right" ng-show="!ctrl.mailsFormVisibility">
-                    <button class="btn btn-default btn-sm" ng-click="ctrl.changeMailsFormVisibility(true)">
+                    <button class="btn btn-primary" ng-click="ctrl.changeMailsFormVisibility(true)">
                         <i class="fa fa-plus"></i>
                     </button>
                 </th>
@@ -19,10 +17,10 @@
             </thead>
             <tbody>
             <tr ng-repeat="mail in ctrl.emails track by $index">
-                <td>{{ mail.kind.substr(0,1).toUpperCase() + mail.kind.substr(1) }}</td>
-                <td>{{ mail.email }}</td>
+                <td class="lead">{{ mail.kind.substr(0,1).toUpperCase() + mail.kind.substr(1) }}</td>
+                <td class="lead">{{ mail.email }}</td>
                 <td class="text-right" ng-style="{'visibility': ctrl.mailsFormVisibility ? 'hidden' : 'visible'}">
-                    <button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.removeMail($index)">
+                    <button type="button" class="btn btn-danger" ng-click="ctrl.removeMail($index)">
                         <i class="fa fa-trash"></i>
                     </button>
                 </td>
@@ -37,18 +35,18 @@
 
     <div class="row" ng-if="ctrl.mailsFormVisibility">
         <ng-form name="ctrl.mailForm">
-            <div class="form-group col-md-4" ng-class="{ 'has-error' : ctrl.mailForm.kind.$invalid && (ctrl.mailForm.kind.$dirty || ctrl.mailForm.submitted) }">
-                <select name="kind" class="form-control input-sm" ng-model="ctrl.editMail.kind"  required>
+            <div class="form-group col-md-4" ng-class="{ 'has-danger' : ctrl.mailForm.kind.$invalid && (ctrl.mailForm.kind.$dirty || ctrl.mailForm.submitted) }">
+                <select name="kind" class="form-control" ng-model="ctrl.editMail.kind"  required>
                     <option value="work">Work</option>
                     <option value="personal">Personal</option>
                     <option value="other">Other</option>
                 </select>
             </div>
-            <div class="form-group col-md-5" ng-class="{ 'has-error' : ctrl.mailForm.email.$invalid && (ctrl.mailForm.email.$dirty || ctrl.mailForm.submitted) }">
-                <input name="email" type="email" class="form-control input-sm" ng-model="ctrl.editMail.email" placeholder="Email *" required>
+            <div class="form-group col-md-5" ng-class="{ 'has-danger' : ctrl.mailForm.email.$invalid && (ctrl.mailForm.email.$dirty || ctrl.mailForm.submitted) }">
+                <input name="email" type="email" class="form-control" ng-model="ctrl.editMail.email" placeholder="Email *" required>
             </div>
-            <div class="btn-group btn-group-sm col-md-3" role="group">
-                <button type="submit" class="btn btn-default" ng-click="ctrl.addMail(ctrl.editMail)">
+            <div class="btn-group col-md-3" role="group">
+                <button type="submit" class="btn btn-primary" ng-click="ctrl.addMail(ctrl.editMail)">
                     <i class="fa fa-plus"></i>
                 </button>
                 <button type="button" class="btn btn-danger" ng-click="ctrl.changeMailsFormVisibility(false)">

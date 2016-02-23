@@ -1,75 +1,81 @@
-<div id="edit-contact" class="container">
-    <div class="page-header">
-        <h1 ng-if="editContact.editMode">
-            Update <small> {{ editContact.contact.name + " " + editContact.contact.lastname }}</small>
-        </h1>
-        <h1 ng-if="!editContact.editMode">
-            New <small> Enter details and click save button</small>
-        </h1>
-    </div>
-    
-    <form name="editContact.contactForm" role="form" novalidate>
+<div id="edit-contact">
 
-        <div class="toolbar">
-            <button class="btn btn-default mt5" ng-disabled="editContact.contactForm.$invalid" ng-click="editContact.saveChanges()">
-                <i class="fa fa-save fa-fw"></i>&nbsp;Save Changes
-            </button>
-
-            <button ng-show="editContact.editMode" class="btn btn-danger mt5" ng-disabled="editContact.contactForm.$invalid" ng-click="editContact.removeContactDialog()">
-                <i class="fa fa-trash fa-fw"></i>&nbsp;Remove contact
-            </button>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-xs-center">
+            <h1 ng-if="editContact.editMode">
+                Update <small> {{ editContact.contact.name + " " + editContact.contact.lastname }}</small>
+            </h1>
+            <h1 ng-if="!editContact.editMode">
+                New <small> Enter details and click save button</small>
+            </h1>
         </div>
+    </div>
 
-        <validation-summary summary="editContact.validationSummary"></validation-summary>
+    <div class="container">
+        <form name="editContact.contactForm" role="form" novalidate>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group" ng-class="{ 'has-error' : editContact.contactForm.name.$invalid && (editContact.contactForm.name.$dirty || editContact.contactForm.submitted) }">
-                    <label for="name"></label>
-                    <input id="name" type="text" name="name" class="form-control" placeholder="Name *" ng-model="editContact.contact.name" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastname"></label>
-                    <input id="lastname" type="text" name="lastname" class="form-control" placeholder="Lastname *" ng-model="editContact.contact.lastname">
-                </div>
+            <div class="toolbar">
+                <button class="btn btn-lg btn-primary" ng-disabled="editContact.contactForm.$invalid" ng-click="editContact.saveChanges()">
+                    <i class="fa fa-save fa-fw"></i>&nbsp;Save Changes
+                </button>
+
+                <button class="btn btn-lg btn-danger mt5" ng-show="editContact.editMode" ng-disabled="editContact.contactForm.$invalid" ng-click="editContact.removeContactDialog()">
+                    <i class="fa fa-trash fa-fw"></i>&nbsp;Remove contact
+                </button>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="web"></label>
-                    <input id="web" type="text" name="web" class="form-control" placeholder="Website" ng-model="editContact.contact.web">
+
+            <validation-summary summary="editContact.validationSummary"></validation-summary>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group" ng-class="{ 'has-danger' : editContact.contactForm.name.$invalid && (editContact.contactForm.name.$dirty || editContact.contactForm.submitted) }">
+                        <label for="name"></label>
+                        <input id="name" type="text" name="name" class="form-control form-control-lg" placeholder="Name *" ng-model="editContact.contact.name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname"></label>
+                        <input id="lastname" type="text" name="lastname" class="form-control form-control-lg" placeholder="Lastname *" ng-model="editContact.contact.lastname">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="birthdate"></label>
-                    <div class="dropdown">
-                        <a class="dropdown-toggle" id="dropdown" role="button" data-toggle="dropdown" data-target="#" href="">
-                            <div class="input-group">
-                                <input id="birthdate" type="text" name="birthdate" class="form-control" ng-model="editContact.contact.birthday" placeholder="Date of birth">
-                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                            </div>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <datetimepicker ng-model="editContact.contact.birthday" datetimepicker-config="{ dropdownSelector: '#dropdown', minView: 'day' }"/>
-                        </ul>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="web"></label>
+                        <input id="web" type="text" name="web" class="form-control form-control-lg" placeholder="Website" ng-model="editContact.contact.web">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate"></label>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" id="dropdown" role="button" data-toggle="dropdown" data-target="#" href="">
+                                <div class="input-group">
+                                    <input id="birthdate" type="text" name="birthdate" class="form-control form-control-lg" ng-model="editContact.contact.birthday" placeholder="Date of birth">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <datetimepicker ng-model="editContact.contact.birthday" datetimepicker-config="{ dropdownSelector: '#dropdown', minView: 'day' }"/>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <contact-phones phones="editContact.contact.phones"></contact-phones>
+            <div class="row">
+                <div class="col-md-6">
+                    <contact-phones phones="editContact.contact.phones"></contact-phones>
+                </div>
+
+                <div class="col-md-6">
+                    <contact-mails emails="editContact.contact.emails"></contact-mails>
+                </div>
             </div>
 
-            <div class="col-md-6">
-                <contact-mails emails="editContact.contact.emails"></contact-mails>
+            <div class="row">
+                <div class="col-md-12">
+                    <contact-addresses addresses="editContact.contact.addresses"></contact-addresses>
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <contact-addresses addresses="editContact.contact.addresses"></contact-addresses>
-            </div>
-        </div>
+        </form>
+    </div>
 
-    </form>
  </div>

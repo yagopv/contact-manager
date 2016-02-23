@@ -1,29 +1,28 @@
 <div>
 
-    <div class="page-header">
-        <h3>Addresses</h3>
-    </div>
+    <h3>Addresses</h3>
+    <hr />
 
-    <button class="btn btn-default" ng-hide="ctrl.addressFormVisibility" ng-click="ctrl.changeAddressFormVisibility(true)">
+    <button class="btn btn-lg btn-primary" ng-hide="ctrl.addressFormVisibility" ng-click="ctrl.changeAddressFormVisibility(true)">
         <i class="fa fa-map-marker fa-fw"></i>&nbsp;Add New
     </button>
 
     <div class="row mt20" ng-hide="ctrl.addressFormVisibility">
-        <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="address in ctrl.addresses track by $index" ng-click="ctrl.editAddress(address)">
-            <div class="panel panel-default" scale-panel>
-                <div class="panel-heading">
-                    <div>
+        <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="address in ctrl.addresses track by $index" ng-click="ctrl.editAddress(address)">
+            <div class="card" scale-panel>
+                <div class="card-header">
+                    <div class="card-title">
                         <span class="lead">{{ address.kind.substr(0,1).toUpperCase() + address.kind.substr(1) }}</span>
-                        <a class="btn btn-danger btn-sm text-right float-right" ng-click="ctrl.removeAddress($index, $event)">
+                        <a class="btn btn-danger text-right float-right" ng-click="ctrl.removeAddress($index, $event)">
                             <i class="fa fa-remove fa-fw"></i>
                         </a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-block">
                     <p>{{ address.street[0] + " " + address.street[0] }}</p>
                 </div>
 
-                <ul class="list-group">
+                <ul class="list-group list-group-flush">
                     <li class="list-group-item">{{ address.state}}</li>
                     <li class="list-group-item">{{ address.city}}</li>
                     <li class="list-group-item">{{ address.postalCode}}</li>
@@ -37,7 +36,7 @@
         <em>Press + to add a new address</em>
     </p>
 
-    <button class="btn btn-default" ng-show="ctrl.addressFormVisibility" ng-click="ctrl.addOrUpdateAddress(ctrl.address)">
+    <button class="btn btn-primary" ng-show="ctrl.addressFormVisibility" ng-click="ctrl.addOrUpdateAddress(ctrl.address)">
         <i ng-if="ctrl.editMode" class="fa fa-save fa-fw"></i>
         <i ng-if="!ctrl.editMode" class="fa fa-plus fa-fw"></i>
     </button>
@@ -46,36 +45,36 @@
         <i class="fa fa-remove fa-fw"></i>
     </button>
 
-    <div class="row mt20" ng-if="ctrl.addressFormVisibility">
+    <div class="row m-t-2" ng-if="ctrl.addressFormVisibility">
         <ng-form name="ctrl.addressForm">
             <div class="col-md-6">
-                <div class="form-group" ng-class="{ 'has-error' : ctrl.addressForm.kind.$invalid && (ctrl.addressForm.kind.$dirty || ctrl.addressForm.submitted) }">
-                    <select name="kind" class="form-control" ng-model="ctrl.address.kind" required>
+                <div class="form-group" ng-class="{ 'has-danger' : ctrl.addressForm.kind.$invalid && (ctrl.addressForm.kind.$dirty || ctrl.addressForm.submitted) }">
+                    <select name="kind" class="form-control form-control-lg" ng-model="ctrl.address.kind" required>
                         <option value="personal">Personal</option>
                         <option value="work">Work</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
-                <div class="form-group" ng-class="{ 'has-error' : ctrl.addressForm.street0.$invalid && (ctrl.addressForm.street0.$dirty || ctrl.addressForm.submitted) }">
-                    <input name="street0" type="text" class="form-control" ng-model="ctrl.address.street[0]" required placeholder="Street *">
+                <div class="form-group" ng-class="{ 'has-danger' : ctrl.addressForm.street0.$invalid && (ctrl.addressForm.street0.$dirty || ctrl.addressForm.submitted) }">
+                    <input name="street0" type="text" class="form-control form-control-lg" ng-model="ctrl.address.street[0]" required placeholder="Street *">
                 </div>
                 <div class="form-group">
-                    <input name="street1" type="text" class="form-control" ng-model="ctrl.address.street[1]" placeholder="Street">
+                    <input name="street1" type="text" class="form-control form-control-lg" ng-model="ctrl.address.street[1]" placeholder="Street">
                 </div>
-                <div class="form-group" ng-class="{ 'has-error' : ctrl.addressForm.state.$invalid && (ctrl.addressForm.state.$dirty || ctrl.addressForm.submitted) }">
-                    <input name="state" type="text" class="form-control" ng-model="ctrl.address.state" required placeholder="State *">
+                <div class="form-group" ng-class="{ 'has-danger' : ctrl.addressForm.state.$invalid && (ctrl.addressForm.state.$dirty || ctrl.addressForm.submitted) }">
+                    <input name="state" type="text" class="form-control form-control-lg" ng-model="ctrl.address.state" required placeholder="State *">
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div class="form-group" ng-class="{ 'has-error' : ctrl.addressForm.city.$invalid && (ctrl.addressForm.city.$dirty || ctrl.addressForm.submitted) }">
-                    <input name="city" type="text" class="form-control" ng-model="ctrl.address.city" required placeholder="City *">
+                <div class="form-group" ng-class="{ 'has-danger' : ctrl.addressForm.city.$invalid && (ctrl.addressForm.city.$dirty || ctrl.addressForm.submitted) }">
+                    <input name="city" type="text" class="form-control form-control-lg" ng-model="ctrl.address.city" required placeholder="City *">
                 </div>
-                <div class="form-group" ng-class="{ 'has-error' : ctrl.addressForm.postalCode.$invalid && (ctrl.addressForm.postalCode.$dirty || ctrl.addressForm.submitted) }">
-                    <input name="postalCode" type="text" class="form-control" ng-model="ctrl.address.postalCode" required placeholder="Postal code *">
+                <div class="form-group" ng-class="{ 'has-danger' : ctrl.addressForm.postalCode.$invalid && (ctrl.addressForm.postalCode.$dirty || ctrl.addressForm.submitted) }">
+                    <input name="postalCode" type="text" class="form-control form-control-lg" ng-model="ctrl.address.postalCode" required placeholder="Postal code *">
                 </div>
-                <div class="form-group" ng-class="{ 'has-error' : ctrl.addressForm.country.$invalid && (ctrl.addressForm.country.$dirty || ctrl.addressForm.submitted) }">
-                    <input name="country" type="text" class="form-control" ng-model="ctrl.address.country" required placeholder="Country *">
+                <div class="form-group" ng-class="{ 'has-danger' : ctrl.addressForm.country.$invalid && (ctrl.addressForm.country.$dirty || ctrl.addressForm.submitted) }">
+                    <input name="country" type="text" class="form-control form-control-lg" ng-model="ctrl.address.country" required placeholder="Country *">
                 </div>
             </div>
         </ng-form>

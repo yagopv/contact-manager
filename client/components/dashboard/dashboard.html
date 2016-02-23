@@ -1,62 +1,66 @@
-<div id="dashboard" class="container">
+<div id="dashboard">
 
-    <div class="page-header">
-        <h1>Dashboard <small>Manage contacts</small></h1>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-xs-center">
+            <h1>Dashboard <small>Manage contacts</small></h1>
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon">
-                        <i class="fa fa-search"></i>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="form-group">
+                    <div class="input-group input-group-lg">
+                        <div class="input-group-addon">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Type to search" ng-model="dashboard.search">
                     </div>
-                    <input type="text" class="form-control" placeholder="Type to search" ng-model="dashboard.search">
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <a ui-sref="newContact" type="button" class="btn btn-lg btn-primary col-xs-12">
+                    <i class="fa fa-user-plus fa-fw"></i>&nbsp; Add new Contact
+                </a>
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
-            <a ui-sref="newContact" type="button" class="btn btn-default col-xs-12">
-                <i class="fa fa-user-plus fa-fw"></i>&nbsp; Add new Contact
-            </a>
-        </div>
-    </div>
 
-    <p class="lead opacity50 mt20" ng-if="dashboard.contacts.length == 0">
-        <em><i class="fa fa-question-circle"></i>&nbsp;Start adding contacts by pressing the "Add new contact button"</em>
-    </p>
+        <p class="lead opacity50 m-t-2" ng-if="dashboard.contacts.length == 0">
+            <em><i class="fa fa-question-circle"></i>&nbsp;Start adding contacts by pressing the "Add new contact button"</em>
+        </p>
 
-    <div class="row mt20">
-        <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="contact in dashboard.contacts | filter:dashboard.search" ng-click="dashboard.editContact(contact)">
-            <div class="contact panel panel-default" scale-panel>
-                <div class="panel-heading">
-                    <span class="lead">{{ contact.name + " " + contact.lastname }}</span>
+        <div class="row m-t-2">
+            <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="contact in dashboard.contacts | filter:dashboard.search" ng-click="dashboard.editContact(contact)">
+                <div class="contact card" scale-panel>
+                    <div class="card-header">
+                        <span class="card-title">{{ contact.name + " " + contact.lastname }}</span>
+                    </div>
+                    <div class="card-block">
+                        <p class="contact-row">
+                            <i class="fa fa-map-marker fa-fw"></i>
+                            <span ng-if="contact.addresses[0]">&nbsp;{{ contact.addresses[0].city + " " + contact.addresses[0].state + " " + contact.addresses[0].postalCode }}</span>
+                            <span ng-if="!contact.addresses[0]">&nbsp;<em>(empty)</em></span>
+                        </p>
+                    </div>
+
+                    <ul class="list-group">
+                        <li class="list-group-item contact-row">
+                            <i class="fa fa-phone fa-fw"></i>
+                            <span ng-if="contact.phones[0]">&nbsp; {{ contact.phones[0].number }}</span>
+                            <span ng-if="!contact.phones[0]">&nbsp; <em>(empty)</em></span>
+                        </li>
+                        <li class="list-group-item contact-row">
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <span ng-if="contact.emails[0]">&nbsp; {{ contact.emails[0].email }}</span>
+                            <span ng-if="!contact.emails[0]">&nbsp; <em>(empty)</em></span>
+                        </li>
+                        <li class="list-group-item contact-row">
+                            <i class="fa fa-internet-explorer fa-fw"></i>
+                            <span ng-if="contact.web">&nbsp; {{ contact.web }}</span>
+                            <span ng-if="!contact.web">&nbsp; <em>(empty)</em></span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="panel-body">
-                    <p class="contact-row">
-                        <i class="fa fa-map-marker fa-fw"></i>
-                        <span ng-if="contact.addresses[0]">&nbsp;{{ contact.addresses[0].city + " " + contact.addresses[0].state + " " + contact.addresses[0].postalCode }}</span>
-                        <span ng-if="!contact.addresses[0]">&nbsp;<em>(empty)</em></span>
-                    </p>
-                </div>
-    
-                <ul class="list-group">
-                    <li class="list-group-item contact-row">
-                        <i class="fa fa-phone fa-fw"></i>
-                        <span ng-if="contact.phones[0]">&nbsp; {{ contact.phones[0].number }}</span>
-                        <span ng-if="!contact.phones[0]">&nbsp; <em>(empty)</em></span>
-                    </li>
-                    <li class="list-group-item contact-row">
-                        <i class="fa fa-envelope fa-fw"></i>
-                        <span ng-if="contact.emails[0]">&nbsp; {{ contact.emails[0].email }}</span>
-                        <span ng-if="!contact.emails[0]">&nbsp; <em>(empty)</em></span>
-                    </li>
-                    <li class="list-group-item contact-row">
-                        <i class="fa fa-internet-explorer fa-fw"></i>
-                        <span ng-if="contact.web">&nbsp; {{ contact.web }}</span>
-                        <span ng-if="!contact.web">&nbsp; <em>(empty)</em></span>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
