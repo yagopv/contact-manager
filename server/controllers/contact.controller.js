@@ -48,6 +48,7 @@ exports.update = function(req, res) {
     contact.user = req.user;
 
     Contact.findByIdAndUpdate(req.params.id, contact, { new: true })
+        .exec()
         .catch(err => res.send(400, err))
         .then(res.status(200).json(contact));
 };

@@ -7,7 +7,6 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 75px;
-    padding-top: 50px;
 }
 
 footer {
@@ -17,8 +16,7 @@ footer {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    background-color: #222;
-    color: #FFF;
+    background-color: #eceeef;
 }
 
 .row {
@@ -35,10 +33,6 @@ footer {
 }
 
 /* Home & 404 */
-#home .jumbotron,#notFound .jumbotron {
-    background-color: #222;
-    color: #FFF;
-}
 
 #home .jumbotron i {
     display: block;
@@ -77,7 +71,7 @@ footer {
 
 /* Bootstrap overrides */
 
-.panel {
+.card {
     cursor: pointer;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
@@ -86,7 +80,7 @@ footer {
     transition: all .1s linear;
 }
 
-.panel.scale {
+.card.scale {
     -webkit-transform: scale(1.02, 1.02);
     -moz-transform: scale(1.02, 1.02);
     -ms-transform: scale(1.02, 1.02);
@@ -129,14 +123,6 @@ footer {
 .loader i {
     position: absolute;
     left: 50%;
-}
-
-.mt20 {
-    margin-top: 20px;
-}
-
-.mt5 {
-    margin-top: 5px;
 }
 
 .float-right {

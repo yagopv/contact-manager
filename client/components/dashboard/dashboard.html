@@ -30,36 +30,34 @@
         </p>
 
         <div class="row m-t-2">
-            <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="contact in dashboard.contacts | filter:dashboard.search" ng-click="dashboard.editContact(contact)">
-                <div class="contact card" scale-panel>
-                    <div class="card-header">
-                        <span class="card-title">{{ contact.name + " " + contact.lastname }}</span>
-                    </div>
-                    <div class="card-block">
-                        <p class="contact-row">
-                            <i class="fa fa-map-marker fa-fw"></i>
-                            <span ng-if="contact.addresses[0]">&nbsp;{{ contact.addresses[0].city + " " + contact.addresses[0].state + " " + contact.addresses[0].postalCode }}</span>
-                            <span ng-if="!contact.addresses[0]">&nbsp;<em>(empty)</em></span>
-                        </p>
-                    </div>
+            <div class="card-columns">
+                <div ng-repeat="contact in dashboard.contacts | filter:dashboard.search" ng-click="dashboard.editContact(contact)">
+                    <div class="contact card" scale-panel>
+                        <div class="card-header">
+                            <span class="card-title">{{ contact.name + " " + contact.lastname }}</span>
+                        </div>
+                        <div class="card-block" ng-if="contact.addresses[0]">
+                            <p class="contact-row">
+                                <i class="fa fa-map-marker fa-fw"></i>
+                                <span>&nbsp;{{ contact.addresses[0].city + " " + contact.addresses[0].state + " " + contact.addresses[0].postalCode }}</span>
+                            </p>
+                        </div>
 
-                    <ul class="list-group">
-                        <li class="list-group-item contact-row">
-                            <i class="fa fa-phone fa-fw"></i>
-                            <span ng-if="contact.phones[0]">&nbsp; {{ contact.phones[0].number }}</span>
-                            <span ng-if="!contact.phones[0]">&nbsp; <em>(empty)</em></span>
-                        </li>
-                        <li class="list-group-item contact-row">
-                            <i class="fa fa-envelope fa-fw"></i>
-                            <span ng-if="contact.emails[0]">&nbsp; {{ contact.emails[0].email }}</span>
-                            <span ng-if="!contact.emails[0]">&nbsp; <em>(empty)</em></span>
-                        </li>
-                        <li class="list-group-item contact-row">
-                            <i class="fa fa-internet-explorer fa-fw"></i>
-                            <span ng-if="contact.web">&nbsp; {{ contact.web }}</span>
-                            <span ng-if="!contact.web">&nbsp; <em>(empty)</em></span>
-                        </li>
-                    </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item contact-row" ng-if="contact.phones[0]">
+                                <i class="fa fa-phone fa-fw"></i>
+                                <span>{{ contact.phones[0].number }}</span>
+                            </li>
+                            <li class="list-group-item contact-row" ng-if="contact.emails[0]">
+                                <i class="fa fa-envelope fa-fw"></i>
+                                <span>{{ contact.emails[0].email }}</span>
+                            </li>
+                            <li class="list-group-item contact-row" ng-if="contact.web">
+                                <i class="fa fa-internet-explorer fa-fw"></i>
+                                <span>{{ contact.web }}</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
