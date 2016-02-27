@@ -9,14 +9,20 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const swig = require('swig');
 
 var app = express();
 
 /**
  * View engine setup
  */
+app.engine('html', swig.renderFile);
 app.set('views', path.join(process.cwd(), 'server/views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
+
+/* Config swig */
+//Avoid collisions with angular interpolation
+swig.setDefaults({ varControls: ['[[', ']]'] });
 
 /**
  * Middleware setup
