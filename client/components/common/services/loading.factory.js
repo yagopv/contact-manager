@@ -2,7 +2,7 @@
  * Little utility for showing a Loader
  */
 (function() {
-    angular.module("app.common")
+    angular.module("app")
         .factory("LoadingFactory", function() {
             return {
                 status: false,

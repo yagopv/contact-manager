@@ -5,7 +5,7 @@
 
     "use strict";
 
-    angular.module("app.dashboard")
+    angular.module("app")
         .controller("EditContactController", [
             "ContactFactory",
             "$stateParams",

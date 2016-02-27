@@ -2,7 +2,7 @@
 
     "use strict";
 
-    angular.module("app.common")
+    angular.module("app")
         .directive("appLoader", ["$window", LoaderDirective]);
 
     function LoaderDirective($window) {

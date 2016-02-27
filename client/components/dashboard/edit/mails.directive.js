@@ -9,7 +9,7 @@
      * @returns {{restrict: string, replace: boolean, scope: {}, bindToController: {emails: string}, controllerAs: string, controller: controller, templateUrl: string}}
      * @constructor
      */
-    angular.module("app.dashboard")
+    angular.module("app")
         .component("contactMails", {
             restrict: "EA",
             replace: true,

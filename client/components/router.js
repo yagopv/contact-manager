@@ -2,7 +2,7 @@
  * Define module app.common
  */
 (function() {
-    angular.module("app.common", ["ui.router", "satellizer"])
+    angular.module("app")
         .config([
             "$stateProvider",
             "$urlRouterProvider",

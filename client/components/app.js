@@ -4,15 +4,18 @@
  */
 (function() {
 
-    "use strict";
+    'use strict';
 
-    angular.module("app", [
-            "app.dashboard",
-            "app.account",
-            "app.common"])
+    angular.module('app', [
+            'ui.bootstrap.datetimepicker',
+            'ngDialog',
+            'ui.router',
+            'satellizer',
+            'toastr', 
+            'ngMessages'])
 
-        .config(["$uiViewScrollProvider", Config ])
-        .controller("AppController", [ "LoadingFactory", "$auth", AppController ]);
+        .config(['$uiViewScrollProvider', Config ])
+        .controller('AppController', [ 'LoadingFactory', '$auth', AppController ]);
 
     /**
      * Config app

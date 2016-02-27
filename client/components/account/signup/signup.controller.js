@@ -1,7 +1,7 @@
 (function() {
    'use strict';
 
-    angular.module('app.account')
+    angular.module('app')
         .controller('SignupController', ['$location', '$auth', 'toastr', 'LoadingFactory', SignupController]);
 
     function SignupController($location, $auth, toastr, LoadingFactory) {

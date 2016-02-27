@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('app.account')
+    angular.module('app')
         .controller('ProfileController', ['$auth', 'toastr', 'AccountFactory', ProfileController]);
 
     function ProfileController($auth, toastr, Account) {

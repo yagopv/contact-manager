@@ -5,7 +5,7 @@
 
     "use strict";
 
-    angular.module('app.dashboard')
+    angular.module('app')
         .controller('DashboardController', ["ContactFactory", "$state", "LoadingFactory" ,DashboardController]);
 
     /**

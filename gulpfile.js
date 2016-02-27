@@ -13,12 +13,9 @@ const paths = {
 
 
 paths.appJs = [
-    path.join(paths.webroot, 'components/**/*.initialize.js'),
-    path.join(paths.webroot, 'components/**/*.directive.js'),
-    path.join(paths.webroot, 'components/**/*.factory.js'),
-    path.join(paths.webroot, 'components/**/*.filter.js'),
-    path.join(paths.webroot, 'components/**/*.controller.js'),
-    path.join(paths.webroot, 'components/app.js')
+    path.join(paths.webroot, 'components/app.js'),
+    path.join(paths.webroot, 'components/router.js'),
+    path.join(paths.webroot, 'components/**/*.js')
 ];
 
 paths.appCss = path.join(paths.webroot, 'css/**/*.css');

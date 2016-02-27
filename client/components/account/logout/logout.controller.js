@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('app.account')
+    angular.module('app')
         .controller('LogoutController', ['$auth', 'toastr', '$state', 'LoadingFactory', LogoutController]);
 
     function LogoutController($auth, toastr, $state, LoadingFactory) {
@@ -13,7 +13,7 @@
         $auth.logout()
             .then(function() {
                 LoadingFactory.hide();
-                $state.go("home");
+                $state.go('home');
             });
     };
 

@@ -10,7 +10,7 @@
      * @returns {{restrict: string, replace: boolean, scope: {}, bindToController: {addresses: string}, controllerAs: string, controller: controller, templateUrl: string}}
      * @constructor
      */
-    angular.module("app.dashboard")
+    angular.module("app")
         .component("contactAddresses", {
             restrict: "EA",
             replace: true,

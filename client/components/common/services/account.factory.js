@@ -3,7 +3,7 @@
  */
 (function() {
 
-    angular.module("app.common")
+    angular.module("app")
         .factory("AccountFactory", ["$http", AccountFactory]);
 
     function AccountFactory($http)  {
