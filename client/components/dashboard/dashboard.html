@@ -36,14 +36,17 @@
                         <div class="card-header">
                             <span class="card-title">{{ contact.name + " " + contact.lastname }}</span>
                         </div>
-                        <div class="card-block" ng-if="contact.addresses[0]">
-                            <p class="contact-row">
+                        <div class="card-block">
+                            <p class="contact-row" ng-if="contact.addresses[0]">
                                 <i class="fa fa-map-marker fa-fw"></i>
-                                <span>&nbsp;{{ contact.addresses[0].city + " " + contact.addresses[0].state + " " + contact.addresses[0].postalCode }}</span>
+                                <span> {{ contact.addresses[0].city + " " + contact.addresses[0].state + " " + contact.addresses[0].postalCode }}</span>
+                            </p>
+                            <p class="contact-row" ng-if="!contact.addresses[0]">
+                                <em>( empty address )</em>
                             </p>
                         </div>
 
-                        <ul class="list-group">
+                        <ul class="list-group list-group-flush">
                             <li class="list-group-item contact-row" ng-if="contact.phones[0]">
                                 <i class="fa fa-phone fa-fw"></i>
                                 <span>{{ contact.phones[0].number }}</span>

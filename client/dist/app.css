@@ -88,6 +88,11 @@ footer {
     transform: scale(1.02, 1.02);
 }
 
+/* Edit contact */
+.hide-after:after {
+    display: none;
+}
+
 /* ngDialog */
 .ngdialog.ngdialog-theme-plain .ngdialog-content {
     padding: 2em;
@@ -186,4 +191,58 @@ footer {
 .btn-google-plus:focus {
     color: #fff;
     background-color: #cb3927;
+}
+
+/* Navbar fixes for BS4 Alpha */
+.brand-mobile {
+    margin-top: 4px;
+    z-index: -1;
+}
+
+.brand-toggler {
+    z-index: 100;
+}
+
+.navbar-brand {
+    float: none;
+}
+
+.navbar-nav .nav-item {
+    float: none;
+}
+.navbar-divider,
+.navbar-nav .nav-item+.nav-item,
+.navbar-nav .nav-link + .nav-link {
+    margin-left: 0;
+}
+.navbar-nav .nav-link {
+    text-align: center;
+}
+.nav.navbar-nav.pull-xs-right {
+    float: none !important;
+}
+
+.brand-mobile {
+    width: 89%;
+}
+
+@media (min-width: 62em) {
+    .navbar-brand {
+        float: left;
+    }
+    .navbar-nav .nav-item {
+        float: left;
+    }
+    .navbar-divider,
+    .navbar-nav .nav-item+.nav-item,
+    .navbar-nav .nav-link + .nav-link {
+        margin-left: 1rem;
+    }
+    .navbar-nav .nav-link {
+        text-align: inherit;
+        font-size: 1rem;
+    }
+    .nav.navbar-nav.pull-xs-right {
+        float: right !important;
+    }
 }
