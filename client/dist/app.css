@@ -106,7 +106,7 @@ footer {
 
 .loader-wrapper {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: #FFF;
@@ -194,6 +194,14 @@ footer {
 }
 
 /* Navbar fixes for BS4 Alpha */
+
+.navbar {
+    padding: 0;
+}
+#navbar-wrapper {
+    padding-right: 0;
+    padding-left: 0;
+}
 .brand-mobile {
     margin-top: 4px;
     z-index: -1;
@@ -227,6 +235,13 @@ footer {
 }
 
 @media (min-width: 62em) {
+    .navbar {
+        padding: .5rem 1rem;
+    }
+    #navbar-wrapper {
+        padding-right: .9375rem;
+        padding-left: .9375rem;
+    }
     .navbar-brand {
         float: left;
     }
