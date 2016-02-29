@@ -137,8 +137,15 @@ footer {
 /* Login */
 
 .center-form {
-    width: 400px;
+    width: auto;
     margin: 0 auto;
+}
+
+@media (min-width: 26rem) {
+    .center-form {
+        width: 25rem;
+        margin: 0 auto;
+    }
 }
 
 .signup-or-separator {
@@ -204,7 +211,6 @@ footer {
 }
 .brand-mobile {
     margin-top: 4px;
-    z-index: -1;
 }
 
 .brand-toggler {

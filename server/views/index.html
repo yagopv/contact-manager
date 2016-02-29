@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="/dist/vendor.css">
     <link rel="stylesheet" href="/dist/app.css">
 
+    <style> [ng-cloak] {display: none !important;} </style>
+
 </head>
 
 <body ng-controller="AppController as appController">
@@ -36,7 +38,7 @@
 <app-loader show="appController.loading.status"></app-loader>
 
 <div id="navbar-wrapper" class="container">
-    <nav class="navbar navbar-light" role="navigation">
+    <nav class="navbar navbar-light" role="navigation" ng-cloak>
         <div class="row">
             <div class="col-xs-1 brand-toggler">
                 <button class="navbar-toggler hidden-lg-up collapsed" type="button" data-toggle="collapse" data-target="#navbar-header">
@@ -56,8 +58,8 @@
                 <li class="nav-item" ui-sref-active="active"><a class="nav-link" href="" ui-sref="about" close-navbar><i class="fa fa-eye fa-fw"></i> About</a></li>
             </ul>
             <ul class="nav navbar-nav pull-xs-right">
-                <li class="nav-item" ui-sref-active="active" ng-if="!appController.isAuthenticated()"><a href="" class="nav-link" ui-sref="login" close-navbar><i class="fa fa-lock fa-fw"></i>  Login</a></li>
-                <li class="nav-item" ui-sref-active="active" ng-if="!appController.isAuthenticated()"><a href="" class="nav-link" ui-sref="signup" close-navbar><i class="fa fa-sign-in fa-fw"></i>  Sign Up</a></li>
+                <li class="nav-item" ui-sref-active="active" ng-if="appController.isAuthenticated() === false"><a href="" class="nav-link" ui-sref="login" close-navbar><i class="fa fa-lock fa-fw"></i>  Login</a></li>
+                <li class="nav-item" ui-sref-active="active" ng-if="appController.isAuthenticated() === false"><a href="" class="nav-link" ui-sref="signup" close-navbar><i class="fa fa-sign-in fa-fw"></i>  Sign Up</a></li>
                 <li class="nav-item" ui-sref-active="active" ng-if="appController.isAuthenticated()"><a href="" class="nav-link" ui-sref="profile" close-navbar><i class="fa fa-user fa-fw"></i>  Profile</a></li>
                 <li class="nav-item" ui-sref-active="active" ng-if="appController.isAuthenticated()"><a href="" class="nav-link" ui-sref="logout" close-navbar><i class="fa fa-sign-out fa-fw"></i>  Sign Out</a></li>
             </ul>
