@@ -8,7 +8,7 @@ const userController = require('./controllers/user.controller.js');
 const authController = require('./controllers/auth.controller.js');
 const express = require('express');
 const router = express.Router();
-const config = process.env.NODE_ENV ? require('config/prod') : require('./config/dev');
+const config = process.env.NODE_ENV ? require('./config/prod') : require('./config/dev');
 
 module.exports = function(app) {
 
