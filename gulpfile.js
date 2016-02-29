@@ -4,8 +4,7 @@ const gulp = require('gulp'),
     cssmin = require('gulp-cssmin'),
     uglify = require('gulp-uglify'),
     path = require('path'),
-    nodemon = require('gulp-nodemon'),
-    exec = require('child_process').exec;
+    nodemon = require('gulp-nodemon');
 
 const paths = {
     webroot: path.join(process.cwd(), 'client')

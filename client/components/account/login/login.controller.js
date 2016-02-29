@@ -4,7 +4,20 @@
     angular.module('app')
         .controller('LoginController', ['$state', '$auth', 'toastr', 'LoadingFactory', LoginController]);
 
+    /**
+     * @ngdoc controller
+     * @name app.controller:LoginController
+     *
+     * @description Authenticate users using Local accounts or oAuth
+     * @param {$state} $state - UIRouter State Service
+     * @param {$auth} $auth - Satellizer Auth Service
+     * @param {toastr} toastr - Toastrs
+     * @param {LoadingFactory} LoadingFactory - Helper for showing loaders
+     */
     function LoginController($state, $auth, toastr, LoadingFactory) {
+        /**
+         * Login user in application
+         */
         this.login = function() {
             LoadingFactory.show();
             $auth.login(this.user)
@@ -19,6 +32,10 @@
                 });
         };
 
+        /**
+         * Authenticate user using oAuth
+         * @param {String} provider - oAuth provider selected
+         */
         this.authenticate = function(provider) {
             LoadingFactory.show();
             $auth.authenticate(provider)
