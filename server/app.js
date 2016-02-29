@@ -39,7 +39,7 @@ app.use(logger('dev'));
 /**
  * Define routes
  */
-require('./config/router')(app);
+require('./router')(app);
 
 /**
  * Start mongoose connection
