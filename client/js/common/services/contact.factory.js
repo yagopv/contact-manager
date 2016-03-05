@@ -3,6 +3,8 @@
  */
 (function() {
 
+    'use strict';
+
     angular.module("app")
         .factory("ContactFactory", ["$http", "$q", ContactFactory]);
 
@@ -110,7 +112,7 @@
 
                 return deferred.promise;
             }
-        }
-    };
+        };
+    }
 })();
 
