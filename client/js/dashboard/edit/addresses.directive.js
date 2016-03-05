@@ -88,6 +88,6 @@
                     this.changeAddressFormVisibility(false);
                 };
             },
-            templateUrl: "/components/dashboard/edit/addresses.html"
+            templateUrl: "/js/dashboard/edit/addresses.html"
         });
 })();

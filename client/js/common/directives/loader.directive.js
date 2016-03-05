@@ -24,7 +24,7 @@
                 })
             },
             controller: function() { },
-            templateUrl: "/components/common/directives/loader.html"
+            templateUrl: "/js/common/directives/loader.html"
         }
     }
 

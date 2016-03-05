@@ -75,7 +75,7 @@
          */
         $stateProvider.state('home', {
             url: "/",
-            templateUrl: '/components/home/home.html'
+            templateUrl: '/js/home/home.html'
         });
 
         /**
@@ -88,7 +88,7 @@
             resolve: {
                 loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
-            templateUrl: '/components/dashboard/dashboard.html'
+            templateUrl: '/js/dashboard/dashboard.html'
         });
 
         /**
@@ -101,7 +101,7 @@
             resolve: {
                 loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
-            templateUrl: '/components/dashboard/edit/editContact.html'
+            templateUrl: '/js/dashboard/edit/editContact.html'
         });
 
         /**
@@ -114,7 +114,7 @@
             resolve: {
                 loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
-            templateUrl: '/components/dashboard/edit/editContact.html'
+            templateUrl: '/js/dashboard/edit/editContact.html'
         });
 
         /**
@@ -122,7 +122,7 @@
          */
         $stateProvider.state('about', {
             url: "/about",
-            templateUrl: '/components/about/about.html'
+            templateUrl: '/js/about/about.html'
         });
 
         /**
@@ -135,7 +135,7 @@
             resolve: {
                 skipIfLoggedIn: ['$q', '$auth', skipIfLoggedIn]
             },
-            templateUrl: '/components/account/login/login.html'
+            templateUrl: '/js/account/login/login.html'
         });
 
         /**
@@ -148,7 +148,7 @@
             resolve: {
                 skipIfLoggedIn: ['$q', '$auth', skipIfLoggedIn]
             },
-            templateUrl: '/components/account/signup/signup.html'
+            templateUrl: '/js/account/signup/signup.html'
         });
 
         /**
@@ -170,7 +170,7 @@
             resolve: {
                 loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
-            templateUrl: '/components/account/profile/profile.html'
+            templateUrl: '/js/account/profile/profile.html'
         });
 
         /**
@@ -178,7 +178,7 @@
          */
         $stateProvider.state('404', {
             url: "/404",
-            templateUrl: '/components/errors/404.html'
+            templateUrl: '/js/errors/404.html'
         });
 
         $urlRouterProvider.when("", "/");
@@ -257,10 +257,8 @@
         .controller('LoginController', ['$state', '$auth', 'toastr', 'LoadingFactory', LoginController]);
 
     /**
-     * @ngdoc controller
-     * @name app.controller:LoginController
-     *
-     * @description Authenticate users using Local accounts or oAuth
+     * Authenticate users using Local accounts or oAuth
+     * @constructor
      * @param {$state} $state - UIRouter State Service
      * @param {$auth} $auth - Satellizer Auth Service
      * @param {toastr} toastr - Toastrs
@@ -313,20 +311,17 @@
 
 })();
 /**
- * @namespace Account.Controllers
+ * Logout Controller
  */
 (function() {
 
     'use strict';
 
     angular.module('app')
-        .controller('LogoutController', ['$auth', 'toastr', '$state', 'LoadingFactory', LogoutController]);
+        .controller('LogoutController', ['$auth', '$state', 'LoadingFactory', LogoutController]);
 
     /**
-     * @ngdoc controller
-     * @name app.controller:LogoutController
-     *
-     * @description Logout users
+     * @constructor
      * @param {$auth} $auth - Satellizer Auth Service
      * @param {$state} $state - UIRouter State Service
      * @param {LoadingFactory} LoadingFactory - Helper for showing loaders
@@ -341,7 +336,7 @@
                 LoadingFactory.hide();
                 $state.go('home');
             });
-    };
+    }
 
 })();
 (function() {
@@ -477,7 +472,7 @@
                 })
             },
             controller: function() { },
-            templateUrl: "/components/common/directives/loader.html"
+            templateUrl: "/js/common/directives/loader.html"
         }
     }
 
@@ -699,7 +694,7 @@
                     }
                 });
             }],
-            templateUrl: "/components/common/directives/validationSummary.html"
+            templateUrl: "/js/common/directives/validationSummary.html"
         }
     }
 
@@ -853,6 +848,8 @@
  * Little utility for showing a Loader
  */
 (function() {
+    'use strict';
+
     angular.module("app")
         .factory("LoadingFactory", function() {
             return {
@@ -863,7 +860,7 @@
                 hide: function() {
                     this.status = false;
                 }
-            }
+            };
         });
 })();
 
@@ -957,7 +954,7 @@
                     this.changeAddressFormVisibility(false);
                 };
             },
-            templateUrl: "/components/dashboard/edit/addresses.html"
+            templateUrl: "/js/dashboard/edit/addresses.html"
         });
 })();
 /**
@@ -1032,7 +1029,7 @@
          */
         this.removeContactDialog = function() {
                 var dialog = ngDialog.open({
-                    template: "/components/dashboard/edit/sureToDelete.html",                    
+                    template: "/js/dashboard/edit/sureToDelete.html",
                     className: 'ngdialog-theme-plain',
                     controller: function() {
                         this.removeContact = function() {
@@ -1146,7 +1143,7 @@
                     this.mailsFormVisibility = isVisible;
                 };
             },
-            templateUrl: "/components/dashboard/edit/mails.html"
+            templateUrl: "/js/dashboard/edit/mails.html"
         });
 
 })();
@@ -1212,6 +1209,6 @@
                     this.phoneFormVisibility = isVisible;
                 };
             },
-            templateUrl: "/components/dashboard/edit/phones.html"
+            templateUrl: "/js/dashboard/edit/phones.html"
         });
 })();

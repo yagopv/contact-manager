@@ -34,19 +34,28 @@ footer {
 
 /* Home & 404 */
 
-#home .jumbotron i {
+#home .jumbotron i,
+#notFound .jumbotron i {
     display: block;
     font-size: 13em;
 }
 
-#notFound .jumbotron i {
-    display: block;
-    font-size: 20em;
+@media (min-width: 768px) {
+    #home .jumbotron i {
+        font-size: 8em;
+    }
+    #notFound .jumbotron i {
+        font-size: 11em;
+    }
 }
 
 @media (min-width: 992px) {
     #home .heading p:first-of-type,#notFound .heading p:first-of-type {
         height: 100px;
+    }
+    #home .jumbotron i,
+    #notFound .jumbotron i {
+        font-size: 14em;
     }
 }
 

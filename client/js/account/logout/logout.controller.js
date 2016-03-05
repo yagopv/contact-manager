@@ -1,18 +1,15 @@
 /**
- * @namespace Account.Controllers
+ * Logout Controller
  */
 (function() {
 
     'use strict';
 
     angular.module('app')
-        .controller('LogoutController', ['$auth', 'toastr', '$state', 'LoadingFactory', LogoutController]);
+        .controller('LogoutController', ['$auth', '$state', 'LoadingFactory', LogoutController]);
 
     /**
-     * @ngdoc controller
-     * @name app.controller:LogoutController
-     *
-     * @description Logout users
+     * @constructor
      * @param {$auth} $auth - Satellizer Auth Service
      * @param {$state} $state - UIRouter State Service
      * @param {LoadingFactory} LoadingFactory - Helper for showing loaders
@@ -27,6 +24,6 @@
                 LoadingFactory.hide();
                 $state.go('home');
             });
-    };
+    }
 
 })();

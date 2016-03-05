@@ -12,9 +12,9 @@ const paths = {
 
 
 paths.appJs = [
-    path.join(paths.webroot, 'components/app.js'),
-    path.join(paths.webroot, 'components/router.js'),
-    path.join(paths.webroot, 'components/**/*.js')
+    path.join(paths.webroot, 'js/app.js'),
+    path.join(paths.webroot, 'js/router.js'),
+    path.join(paths.webroot, 'js/**/*.js')
 ];
 
 paths.appCss = path.join(paths.webroot, 'css/**/*.css');
@@ -118,4 +118,4 @@ gulp.task('watch:client', function () {
     gulp.watch([paths.appJs, paths.appCss], ['concat']);
 });
 
-gulp.task('watch', ['concat', 'watch:client']);
+gulp.task('debug', ['concat', 'watch:client']);

@@ -70,7 +70,7 @@
          */
         this.removeContactDialog = function() {
                 var dialog = ngDialog.open({
-                    template: "/components/dashboard/edit/sureToDelete.html",                    
+                    template: "/js/dashboard/edit/sureToDelete.html",
                     className: 'ngdialog-theme-plain',
                     controller: function() {
                         this.removeContact = function() {

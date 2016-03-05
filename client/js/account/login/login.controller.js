@@ -5,10 +5,8 @@
         .controller('LoginController', ['$state', '$auth', 'toastr', 'LoadingFactory', LoginController]);
 
     /**
-     * @ngdoc controller
-     * @name app.controller:LoginController
-     *
-     * @description Authenticate users using Local accounts or oAuth
+     * Authenticate users using Local accounts or oAuth
+     * @constructor
      * @param {$state} $state - UIRouter State Service
      * @param {$auth} $auth - Satellizer Auth Service
      * @param {toastr} toastr - Toastrs

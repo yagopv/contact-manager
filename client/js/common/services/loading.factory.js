@@ -2,6 +2,8 @@
  * Little utility for showing a Loader
  */
 (function() {
+    'use strict';
+
     angular.module("app")
         .factory("LoadingFactory", function() {
             return {
@@ -12,6 +14,6 @@
                 hide: function() {
                     this.status = false;
                 }
-            }
+            };
         });
 })();

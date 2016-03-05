@@ -61,7 +61,7 @@
                     this.mailsFormVisibility = isVisible;
                 };
             },
-            templateUrl: "/components/dashboard/edit/mails.html"
+            templateUrl: "/js/dashboard/edit/mails.html"
         });
 
 })();

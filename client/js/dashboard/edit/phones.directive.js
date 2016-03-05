@@ -60,6 +60,6 @@
                     this.phoneFormVisibility = isVisible;
                 };
             },
-            templateUrl: "/components/dashboard/edit/phones.html"
+            templateUrl: "/js/dashboard/edit/phones.html"
         });
 })();

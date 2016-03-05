@@ -37,7 +37,7 @@
                     }
                 });
             }],
-            templateUrl: "/components/common/directives/validationSummary.html"
+            templateUrl: "/js/common/directives/validationSummary.html"
         }
     }
 

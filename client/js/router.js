@@ -22,7 +22,7 @@
          */
         $stateProvider.state('home', {
             url: "/",
-            templateUrl: '/components/home/home.html'
+            templateUrl: '/js/home/home.html'
         });
 
         /**
@@ -35,7 +35,7 @@
             resolve: {
                 loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
-            templateUrl: '/components/dashboard/dashboard.html'
+            templateUrl: '/js/dashboard/dashboard.html'
         });
 
         /**
@@ -48,7 +48,7 @@
             resolve: {
                 loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
-            templateUrl: '/components/dashboard/edit/editContact.html'
+            templateUrl: '/js/dashboard/edit/editContact.html'
         });
 
         /**
@@ -61,7 +61,7 @@
             resolve: {
                 loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
-            templateUrl: '/components/dashboard/edit/editContact.html'
+            templateUrl: '/js/dashboard/edit/editContact.html'
         });
 
         /**
@@ -69,7 +69,7 @@
          */
         $stateProvider.state('about', {
             url: "/about",
-            templateUrl: '/components/about/about.html'
+            templateUrl: '/js/about/about.html'
         });
 
         /**
@@ -82,7 +82,7 @@
             resolve: {
                 skipIfLoggedIn: ['$q', '$auth', skipIfLoggedIn]
             },
-            templateUrl: '/components/account/login/login.html'
+            templateUrl: '/js/account/login/login.html'
         });
 
         /**
@@ -95,7 +95,7 @@
             resolve: {
                 skipIfLoggedIn: ['$q', '$auth', skipIfLoggedIn]
             },
-            templateUrl: '/components/account/signup/signup.html'
+            templateUrl: '/js/account/signup/signup.html'
         });
 
         /**
@@ -117,7 +117,7 @@
             resolve: {
                 loginRequired: [ '$q', '$location', '$auth', loginRequired ]
             },
-            templateUrl: '/components/account/profile/profile.html'
+            templateUrl: '/js/account/profile/profile.html'
         });
 
         /**
@@ -125,7 +125,7 @@
          */
         $stateProvider.state('404', {
             url: "/404",
-            templateUrl: '/components/errors/404.html'
+            templateUrl: '/js/errors/404.html'
         });
 
         $urlRouterProvider.when("", "/");
