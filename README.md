@@ -1,23 +1,27 @@
-###Build Contact Manager
+Build Contact Manager
+=====================
 
-#####Install npm dependencies
-npm install
+### Install package managers and global deps
 
-#####Install bower dependencies
-bower install
+```
+$ npm install
+$ bower install
+$ npm install -g gulp
+$ npm install -g nodemon
+```
 
-#####Install gulp if not available
-npm install -g gulp
+### Start MongoDB server
+```
+$ mongod
+```
 
-#####Install nodemon for server automatic restarts
-npm install -g nodemon
+### Debug
+```
+$ gulp debug (for debug)
+$ gulp min (Minify for production)
+```
 
-#####Start MongoDB server
-mongod
-
-#####Gulp debug
-gulp watch (for debug)
-gulp min (for production)
-
-#####Start app
-npm start (nodemon server)
+##### Start app
+```
+$ npm start (nodemon server)
+```
