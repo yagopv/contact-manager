@@ -42,17 +42,17 @@
 <div id="notFound">
     <div class="jumbotron">
         <div class="container">
-            <div class="col-md-2 text-center">
+            <div class="col-md-2 text-xs-center">
                 <i class="fa fa-warning fa-2x"></i>
             </div>
-            <div class="col-md-10 text-center">
-                <%if (error.status == 404) { %>
+            <div class="col-md-10 text-xs-center">
+                {% if (error.status == 404) %}
                 <h1>404</h1>
                 <p>The page you are looking for does not exists in this site</p>
-                <% } else { %>
+                {% else %}
                 <h1>500</h1>
                 <p>An error has occurred. Try again later and if the problem persist contact with us</p>
-                <% } %>
+                {% endif %}
             </div>
         </div>
     </div>
